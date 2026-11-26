@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m pytest -v)",
+      "Bash(python3 *)",
+      "Bash(ollama serve *)",
+      "Bash(ollama list *)",
+      "Bash(ollama pull *)",
+      "Bash(pkill *)",
+      "Bash(make demo-hr *)",
+      "Bash(make demo-spares *)",
+      "Bash(python *)",
+      "Bash(streamlit run *)",
+      "Bash(curl -s http://localhost:8501/_stcore/health)",
+      "Bash(lsof -ti:8501)",
+      "Bash(kill 80606 *)",
+      "Bash(git push *)"
+    ]
+  }
+}
