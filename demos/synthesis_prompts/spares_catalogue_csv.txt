@@ -1,0 +1,8 @@
+Generate a realistic marine vessel spare-parts catalogue CSV with 75 rows (spares_catalogue.csv) having exact columns:
+part_no,description,vessel_system,unit_price,lead_time_days,stock_qty,supplier_id
+
+Requirements:
+- Include diverse vessel systems: Main Engine, Auxiliary Generator, Fuel System, Cooling Water, Navigation & Radar, Deck Machinery, Safety & LSA, Electrical Switchboard.
+- Use 4 supplier IDs: SUP-01, SUP-02, SUP-03, SUP-04.
+- Include realistic unit prices (from $12.50 to $4850.00), lead times (3 to 45 days), and stock quantities (0 to 60, including some zero-stock critical parts).
+- Output pure CSV with header row and 75 data rows.

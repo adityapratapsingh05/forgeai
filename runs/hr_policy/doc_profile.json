@@ -1,0 +1,113 @@
+{
+  "docs_dir": "demos/hr_policy/docs",
+  "file_count": 3,
+  "files": [
+    {
+      "filename": "code_of_conduct.md",
+      "size_bytes": 3118,
+      "doc_type": "md",
+      "title": "Shore Staff Code of Conduct & Grievance Procedure",
+      "headings": [
+        "Shore Staff Code of Conduct & Grievance Procedure",
+        "Core Workplace Standards & Conflict of Interest",
+        "Gift Value Threshold",
+        "Outside Employment Approval",
+        "Confidentiality",
+        "Anti-Harassment & Whistleblower Protection",
+        "Zero-Tolerance Policy",
+        "Non-Retaliation Window",
+        "Formal Grievance Filing & Investigation Timeline",
+        "Filing Deadline",
+        "Acknowledgment SLA",
+        "Investigation Completion SLA",
+        "Appeal Window",
+        "Disciplinary Actions",
+        "Verbal Warning",
+        "Written Warning",
+        "Suspension",
+        "Termination"
+      ],
+      "word_count": 344,
+      "warnings": []
+    },
+    {
+      "filename": "leave_policy.md",
+      "size_bytes": 4588,
+      "doc_type": "md",
+      "title": "Shore Staff Leave & Attendance Policy",
+      "headings": [
+        "Shore Staff Leave & Attendance Policy",
+        "1. Annual Paid Leave",
+        "Accrual Rate and Maximum Carry-Over",
+        "Eligibility and Thresholds",
+        "Notice Period and Approval Workflow",
+        "Edge Cases",
+        "2. Sick & Medical Leave",
+        "Annual Allowance and Medical Certificate Threshold",
+        "Hospitalization Leave",
+        "3. Parental & Family Leave",
+        "Maternity and Paternity Leave",
+        "Bereavement Leave",
+        "4. Public Holidays & Unpaid Leave",
+        "Public Holidays",
+        "Unpaid Leave",
+        "5. Notice & Approval Procedure",
+        "Notice Periods",
+        "Approval Workflow",
+        "Portal Notice Days"
+      ],
+      "word_count": 566,
+      "warnings": []
+    },
+    {
+      "filename": "travel_expense_policy.md",
+      "size_bytes": 1994,
+      "doc_type": "md",
+      "title": "Shore Staff Travel & Expense Reimbursement Policy",
+      "headings": [
+        "Shore Staff Travel & Expense Reimbursement Policy",
+        "1. Flight & Rail Booking Rules",
+        "2. Lodging & Meal Per Diem Caps",
+        "3. Ground Transport & Mileage",
+        "4. Expense Submission & Audit"
+      ],
+      "word_count": 256,
+      "warnings": []
+    }
+  ],
+  "total_bytes": 9700,
+  "doc_types": [
+    "md"
+  ],
+  "topic_keywords": [
+    "leave",
+    "days",
+    "employees",
+    "business",
+    "approval",
+    "notice",
+    "department",
+    "travel",
+    "human",
+    "resources",
+    "provide",
+    "annual",
+    "paid",
+    "rate",
+    "receipt",
+    "policy",
+    "issued",
+    "company",
+    "employee",
+    "maximum",
+    "class",
+    "employment",
+    "least",
+    "harassment",
+    "policies"
+  ],
+  "has_tabular_data": false,
+  "csv_tables": [],
+  "warnings": [],
+  "doc_hash": "ec1198a0c6aa19e1"
+}

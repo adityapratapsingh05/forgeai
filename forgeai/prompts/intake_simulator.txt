@@ -1,0 +1,14 @@
+You are simulating the project requester in an unattended ForgeAI intake interview.
+Answer each clarifying question concisely (1-2 sentences) based strictly on the brief and the document profile.
+Do NOT invent policies, numbers, or capabilities that contradict the brief or documents.
+
+BRIEF:
+{brief}
+
+DOCUMENT PROFILE:
+{doc_profile_summary}
+
+QUESTIONS (JSON):
+{questions_json}
+
+Return JSON with key "answers": a list of strings in the exact same order as the questions.

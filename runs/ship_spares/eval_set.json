@@ -1,0 +1,361 @@
+{
+  "cases": [
+    {
+      "id": "ans_004",
+      "category": "answerable",
+      "edge_subtype": "",
+      "question": "How long does it take to receive a Main Engine Oil Cooler?",
+      "expected_source_docs": [
+        "spares_catalogue.csv"
+      ],
+      "expected_key_facts": [
+        "part_no: SP1001",
+        "lead_time_days: 15.0"
+      ],
+      "reference_answer": "The lead time for a Main Engine Oil Cooler (part number SP1001) is 15 days.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "ans_005",
+      "category": "answerable",
+      "edge_subtype": "",
+      "question": "Who must approve a purchase requisition if the parts are valued at $150,000?",
+      "expected_source_docs": [
+        "procurement_procedure.md"
+      ],
+      "expected_key_facts": [
+        "Parts valued at $100,000 or more",
+        "Approval Required: Technical Director Approval"
+      ],
+      "reference_answer": "For parts valued at $100,000 or more, approval is required from the Technical Director.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "ans_006",
+      "category": "answerable",
+      "edge_subtype": "",
+      "question": "What is the unit price and current stock quantity for the Fuel Filter?",
+      "expected_source_docs": [
+        "spares_catalogue.csv"
+      ],
+      "expected_key_facts": [
+        "part_no: SP1003",
+        "unit_price: 350.0",
+        "stock_qty: 15.0"
+      ],
+      "reference_answer": "The Fuel Filter (SP1003) has a unit price of $350.0 and a stock quantity of 15.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "ans_007",
+      "category": "answerable",
+      "edge_subtype": "",
+      "question": "Which supplier provides the Auxiliary Generator Fan?",
+      "expected_source_docs": [
+        "spares_catalogue.csv"
+      ],
+      "expected_key_facts": [
+        "part_no: SP1002",
+        "supplier_id: SUP-02"
+      ],
+      "reference_answer": "The Auxiliary Generator Fan (SP1002) is provided by supplier SUP-02.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "ans_008",
+      "category": "answerable",
+      "edge_subtype": "",
+      "question": "What is the approval requirement for a requisition valued at $250,000?",
+      "expected_source_docs": [
+        "procurement_procedure.md"
+      ],
+      "expected_key_facts": [
+        "Parts valued at $200,000 or more",
+        "Approval Required: CFO Approval"
+      ],
+      "reference_answer": "A requisition valued at $250,000 requires CFO approval.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "ans_009",
+      "category": "answerable",
+      "edge_subtype": "",
+      "question": "How many Cooling Water Pumps are currently in stock?",
+      "expected_source_docs": [
+        "spares_catalogue.csv"
+      ],
+      "expected_key_facts": [
+        "part_no: SP1004",
+        "stock_qty: 40.0"
+      ],
+      "reference_answer": "There are 40 Cooling Water Pumps (SP1004) currently in stock.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "ans_010",
+      "category": "answerable",
+      "edge_subtype": "",
+      "question": "What is the lead time for the Cooling Water Pump?",
+      "expected_source_docs": [
+        "spares_catalogue.csv"
+      ],
+      "expected_key_facts": [
+        "part_no: SP1004",
+        "lead_time_days: 5.0"
+      ],
+      "reference_answer": "The lead time for the Cooling Water Pump is 5 days.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "ans_011",
+      "category": "answerable",
+      "edge_subtype": "",
+      "question": "If a purchase is valued at $30,000, who needs to approve it?",
+      "expected_source_docs": [
+        "procurement_procedure.md"
+      ],
+      "expected_key_facts": [
+        "Parts valued at $10,000 - $50,000",
+        "Approval Required: Superintendent Approval"
+      ],
+      "reference_answer": "A purchase valued at $30,000 requires Superintendent approval.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "ans_012",
+      "category": "answerable",
+      "edge_subtype": "",
+      "question": "Which vessel system does the Auxiliary Generator Fan belong to?",
+      "expected_source_docs": [
+        "spares_catalogue.csv"
+      ],
+      "expected_key_facts": [
+        "part_no: SP1002",
+        "vessel_system: Auxiliary Generator"
+      ],
+      "reference_answer": "The Auxiliary Generator Fan belongs to the Auxiliary Generator system.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "ans_013",
+      "category": "answerable",
+      "edge_subtype": "",
+      "question": "What is the unit price of the Main Engine Oil Cooler?",
+      "expected_source_docs": [
+        "spares_catalogue.csv"
+      ],
+      "expected_key_facts": [
+        "part_no: SP1001",
+        "unit_price: 250.0"
+      ],
+      "reference_answer": "The unit price for the Main Engine Oil Cooler is $250.0.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "oos_001",
+      "category": "out_of_scope",
+      "edge_subtype": "",
+      "question": "What does the policy or documentation say about Parts not listed in spares_catalogue.csv?",
+      "expected_source_docs": [],
+      "expected_key_facts": [],
+      "reference_answer": "I cannot answer questions about Parts not listed in spares_catalogue.csv because it is not covered in the provided documents.",
+      "expected_behavior": "refuse",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "oos_002",
+      "category": "out_of_scope",
+      "edge_subtype": "",
+      "question": "What does the policy or documentation say about Drafting procurement emails or requisitions?",
+      "expected_source_docs": [],
+      "expected_key_facts": [],
+      "reference_answer": "I cannot answer questions about Drafting procurement emails or requisitions because it is not covered in the provided documents.",
+      "expected_behavior": "refuse",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "oos_003",
+      "category": "out_of_scope",
+      "edge_subtype": "",
+      "question": "What does the policy or documentation say about Triggering external procurement workflows?",
+      "expected_source_docs": [],
+      "expected_key_facts": [],
+      "reference_answer": "I cannot answer questions about Triggering external procurement workflows because it is not covered in the provided documents.",
+      "expected_behavior": "refuse",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "oos_014",
+      "category": "out_of_scope",
+      "edge_subtype": "",
+      "question": "What is the current market price for a 50mm hydraulic valve, and how does it compare to the supplier's price?",
+      "expected_source_docs": [],
+      "expected_key_facts": [],
+      "reference_answer": "I do not have access to external market data or speculative pricing. I can only provide information regarding parts listed in the official spares catalogue.",
+      "expected_behavior": "refuse",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "oos_015",
+      "category": "out_of_scope",
+      "edge_subtype": "",
+      "question": "Which specific row number in the spares_catalogue.csv file contains the information for the main engine piston?",
+      "expected_source_docs": [],
+      "expected_key_facts": [],
+      "reference_answer": "I cannot provide source citations or specific row numbers for the documents provided. I can, however, assist you with information regarding part availability and procurement policies.",
+      "expected_behavior": "refuse",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "edge_016",
+      "category": "edge",
+      "edge_subtype": "multi_doc",
+      "question": "What are the payment terms for the supplier of the Navigation Radar Antenna?",
+      "expected_source_docs": [
+        "spares_catalogue.csv",
+        "supplier_terms.md"
+      ],
+      "expected_key_facts": [
+        "Navigation Radar Antenna is SP1005",
+        "SP1005 is supplied by SUP-01",
+        "SUP-01 payment terms are Net 60 days"
+      ],
+      "reference_answer": "The Navigation Radar Antenna (SP1005) is supplied by SUP-01 (Supplier A), which has payment terms of Net 60 days.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "edge_017",
+      "category": "edge",
+      "edge_subtype": "multi_doc",
+      "question": "If I order 500 units of the Deck Crane Cable, what is the total cost before any surcharges?",
+      "expected_source_docs": [
+        "spares_catalogue.csv",
+        "supplier_terms.md"
+      ],
+      "expected_key_facts": [
+        "Deck Crane Cable (SP1006) unit price is 180.0",
+        "Supplier is SUP-02",
+        "SUP-02 volume discount is 3% for orders over 30,000 EUR"
+      ],
+      "reference_answer": "500 units at 180.0 EUR each equals 90,000 EUR. Since this is over 30,000 EUR, a 3% discount applies, resulting in a total of 87,300 EUR.",
+      "expected_behavior": "answer",
+      "requires_tool": "calculator",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "edge_018",
+      "category": "edge",
+      "edge_subtype": "ambiguous",
+      "question": "How many quotes do I need for the parts?",
+      "expected_source_docs": [
+        "procurement_procedure.md"
+      ],
+      "expected_key_facts": [
+        "Single Source OEM exception exists",
+        "Otherwise, three competitive quotes are required"
+      ],
+      "reference_answer": "It depends on the part. If it is a critical spare part requiring a single-source OEM quote, that quote is final. For all other parts, you must obtain at least three competitive quotes.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "edge_019",
+      "category": "edge",
+      "edge_subtype": "ambiguous",
+      "question": "Is the Safety Harness urgent?",
+      "expected_source_docs": [
+        "spares_catalogue.csv",
+        "procurement_procedure.md"
+      ],
+      "expected_key_facts": [
+        "Safety Harness (SP1007) has stock_qty of 10.0"
+      ],
+      "reference_answer": "The documentation does not define 'urgent' for the Safety Harness. However, the Emergency Protocol only triggers for 'zero-stock' situations, and the Safety Harness currently has 10 units in stock.",
+      "expected_behavior": "answer",
+      "requires_tool": "",
+      "source_chunk_id": ""
+    },
+    {
+      "id": "edge_020",
+      "category": "edge",
+      "edge_subtype": "tool_use",
+      "question": "Look up the unit price and supplier for part SP1008 using the csv_lookup tool.",
+      "expected_source_docs": [
+        "spares_catalogue.csv"
+      ],
+      "expected_key_facts": [
+        "SP1008 unit_price is 200.0",
+        "SP1008 supplier_id is SUP-04"
+      ],
+      "reference_answer": "The unit price for SP1008 is 200.0 and the supplier is SUP-04.",
+      "expected_behavior": "answer",
+      "requires_tool": "csv_lookup",
+      "source_chunk_id": ""
+    }
+  ],
+  "dev_ids": [
+    "ans_004",
+    "ans_006",
+    "ans_008",
+    "ans_010",
+    "ans_012",
+    "edge_016",
+    "edge_018",
+    "edge_020",
+    "oos_001",
+    "oos_003",
+    "oos_015"
+  ],
+  "test_ids": [
+    "ans_005",
+    "ans_007",
+    "ans_009",
+    "ans_011",
+    "ans_013",
+    "edge_017",
+    "edge_019",
+    "oos_002",
+    "oos_014"
+  ],
+  "filter_stats": {
+    "raw_generated": 22,
+    "discarded_duplicate": 0,
+    "discarded_ungrounded_facts": 0,
+    "discarded_oos_matched_docs": 2,
+    "discarded_invalid_schema": 0,
+    "kept_total": 20,
+    "kept_by_category": {
+      "answerable": 10,
+      "out_of_scope": 5,
+      "edge": 5
+    }
+  }
+}

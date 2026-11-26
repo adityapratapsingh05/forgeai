@@ -1,0 +1,6 @@
+Write a realistic marine procurement document in Markdown titled "Vessel Spare Parts Procurement & Requisition Procedure" (procurement_procedure.md).
+Include concrete approval thresholds, lead-time buffers, and requisition steps:
+1. Requisition Approval Matrix (order USD brackets: Superintendent, Fleet Manager, Technical Director, CFO)
+2. Competitive Quotes Rule (when 3 quotes are required vs single-source OEM exception)
+3. Emergency / Vessel-Off-Hire Spares Protocol (zero-stock escalation, port-delivery cutoff hours)
+4. Goods Receipt & Invoice Matching (3-way match tolerance percentage and discrepancy reporting days)

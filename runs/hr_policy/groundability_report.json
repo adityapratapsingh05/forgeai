@@ -1,0 +1,105 @@
+{
+  "items": [
+    {
+      "topic": "Annual, sick, and parental leave policies",
+      "status": "PARTIAL",
+      "retrieval_score": 0.6245,
+      "keyword_overlap": 1.0,
+      "evidence_snippets": [
+        "nsive guide for all Shore employees regarding leave and attendance policies.\n```\n\nThis document is a comprehensive and realistic corporate HR policy document, tailored to the specific requirements outlined. It covers all",
+        "## 3. Parental & Family Leave"
+      ],
+      "evidence_sources": [
+        "leave_policy.md"
+      ],
+      "reason": "The evidence provides specific details for sick leave and mentions the existence of parental leave, but it lacks the actual policy details, duration, or eligibility criteria for annual and parental leave."
+    },
+    {
+      "topic": "Code of conduct and grievance procedures",
+      "status": "PARTIAL",
+      "retrieval_score": 0.7633,
+      "keyword_overlap": 1.0,
+      "evidence_snippets": [
+        "# Shore Staff Code of Conduct & Grievance Procedure",
+        "## Formal Grievance Filing & Investigation Timeline"
+      ],
+      "evidence_sources": [
+        "code_of_conduct.md"
+      ],
+      "reason": "The evidence provides a filing deadline and termination policy, but lacks the full procedural steps, investigation process, and comprehensive conduct expectations required to fully address the topic."
+    },
+    {
+      "topic": "Travel and lodging booking rules",
+      "status": "SUPPORTED",
+      "retrieval_score": 0.582,
+      "keyword_overlap": 1.0,
+      "evidence_snippets": [
+        "## 1. Flight & Rail Booking Rules\n- **Economy Class Flight**: Economy class flights are the standard for all domestic and international travel. Business class flights are reserved for travel that is 8 hours or longer.\n- ",
+        "## 2. Lodging & Meal Per Diem Caps\n- **Domestic Hotel Caps**: The maximum per diem for domestic hotel stays is $200 per night.\n- **International Hotel Caps**: The maximum per diem for international hotel stays is $300 pe"
+      ],
+      "evidence_sources": [
+        "travel_expense_policy.md"
+      ],
+      "reason": "The retrieved evidence provides comprehensive rules for flight classes, advance booking lead times, and lodging per diem caps, which directly address the requested travel and lodging booking policies."
+    },
+    {
+      "topic": "Meal per diem and expense caps",
+      "status": "SUPPORTED",
+      "retrieval_score": 0.7599,
+      "keyword_overlap": 1.0,
+      "evidence_snippets": [
+        "## 2. Lodging & Meal Per Diem Caps\n- **Domestic Hotel Caps**: The maximum per diem for domestic hotel stays is $200 per night.\n- **International Hotel Caps**: The maximum per diem for international hotel stays is $300 pe",
+        "# Shore Staff Travel & Expense Reimbursement Policy"
+      ],
+      "evidence_sources": [
+        "travel_expense_policy.md"
+      ],
+      "reason": "The retrieved evidence explicitly provides the daily meal per diem rates for both domestic ($50) and international ($75) travel, as well as the specific lodging caps."
+    },
+    {
+      "topic": "Expense submission and audit processes",
+      "status": "SUPPORTED",
+      "retrieval_score": 0.673,
+      "keyword_overlap": 0.8,
+      "evidence_snippets": [
+        "## 4. Expense Submission & Audit\n- **Receipt Threshold**: Receipts for all expenses must be submitted within 3 days of returning from the trip.\n- **Submission Deadline**: Submissions must be made within 5 days of the rec",
+        "# Shore Staff Travel & Expense Reimbursement Policy"
+      ],
+      "evidence_sources": [
+        "travel_expense_policy.md",
+        "code_of_conduct.md"
+      ],
+      "reason": "The retrieved evidence provides specific, actionable rules regarding receipt thresholds, submission deadlines, and finance payout SLAs for expense processing."
+    },
+    {
+      "topic": "Workplace standards and conflict of interest",
+      "status": "UNSUPPORTED",
+      "retrieval_score": 0.8146,
+      "keyword_overlap": 1.0,
+      "evidence_snippets": [
+        "## Core Workplace Standards & Conflict of Interest",
+        "### Confidentiality\n- Employees are required to maintain confidentiality regarding proprietary information and trade secrets.\n- Any breaches of confidentiality will result in disciplinary action, up to and including term"
+      ],
+      "evidence_sources": [
+        "code_of_conduct.md"
+      ],
+      "reason": "While the document title mentions 'Core Workplace Standards & Conflict of Interest', the provided snippets contain no actual content, definitions, or rules regarding conflict of interest policies."
+    }
+  ],
+  "supported_topics": [
+    "Travel and lodging booking rules",
+    "Meal per diem and expense caps",
+    "Expense submission and audit processes"
+  ],
+  "partial_topics": [
+    "Annual, sick, and parental leave policies",
+    "Code of conduct and grievance procedures"
+  ],
+  "unsupported_topics": [
+    "Workplace standards and conflict of interest"
+  ],
+  "mostly_unsupported": false,
+  "warnings": [
+    "Groundability Guard flagged 1 UNSUPPORTED topic(s) and moved them to must_refuse: Workplace standards and conflict of interest"
+  ]
+}

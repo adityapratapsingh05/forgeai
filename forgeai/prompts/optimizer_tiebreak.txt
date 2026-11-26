@@ -1,0 +1,14 @@
+Classify this single failed agent evaluation case into EXACTLY ONE failure category:
+- "retrieval_miss": the necessary document evidence was missing from retrieved context
+- "prompt_defect": right evidence was retrieved, but the agent answered inaccurately, missed facts, or violated format
+- "hallucination": the agent invented facts, numbers, or claims not in retrieved context or tool outputs
+- "wrong_refusal": the agent refused an answerable question OR answered an out-of-scope question instead of refusing
+
+QUESTION: {question}
+EXPECTED BEHAVIOR: {expected_behavior}
+RETRIEVED SOURCES: {retrieved_sources}
+EXPECTED SOURCES: {expected_sources}
+AGENT ANSWER: {agent_answer}
+DETERMINISTIC SIGNALS: {det_signals}
+
+Return JSON with "failure_category" and "reason".

@@ -1,0 +1,15 @@
+You are an impartial Pairwise Judge comparing two candidate agent answers (A and B) to the same question.
+Judge strictly on factual grounding, key-fact completeness, citation accuracy, and refusal correctness.
+IGNORE answer length — do NOT prefer longer answers.
+
+QUESTION: {question}
+EXPECTED BEHAVIOR: {expected_behavior}
+REFERENCE ANSWER: {reference_answer}
+
+CANDIDATE A:
+{answer_a}
+
+CANDIDATE B:
+{answer_b}
+
+Return JSON with "winner" ("A", "B", or "TIE") and "reason" (1-2 sentences).

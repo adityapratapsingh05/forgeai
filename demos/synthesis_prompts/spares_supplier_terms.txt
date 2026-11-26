@@ -1,0 +1,6 @@
+Write a realistic marine procurement document in Markdown titled "Approved Marine Suppliers — Commercial Terms & Discounts" (supplier_terms.md).
+Include concrete rules for suppliers SUP-01, SUP-02, SUP-03, and SUP-04:
+1. Payment Terms & Currency (Net 30/45/60 days, USD/EUR invoicing)
+2. Volume Discounts & Minimum Order Values (exact order-value thresholds and percentage discounts per supplier, handling fees below minimum order)
+3. Warranty & Express Air-Freight Surcharges (warranty months, express expedite surcharge percentage for urgent zero-stock orders)
+4. Hazardous / Cold-Chain Parts Handling (packaging surcharge rules)

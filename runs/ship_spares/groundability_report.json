@@ -1,0 +1,121 @@
+{
+  "items": [
+    {
+      "topic": "Spare part lookup and stock levels",
+      "status": "PARTIAL",
+      "retrieval_score": 0.5341,
+      "keyword_overlap": 0.6667,
+      "evidence_snippets": [
+        "# Vessel Spare Parts Procurement & Requisition Procedure",
+        "## Emergency / Vessel-Off-Hire Spares Protocol\n\n- **Zero-Stock Escalation:** In the event of a zero-stock situation, the part must be ordered immediately. The part must be delivered within 24 hours.\n- **Port-Delivery Cut"
+      ],
+      "evidence_sources": [
+        "procurement_procedure.md"
+      ],
+      "reason": "The evidence provides protocols for emergency stock situations and procurement rules, but it lacks a mechanism, database, or interface for performing a spare part lookup or checking real-time stock levels."
+    },
+    {
+      "topic": "Unit price and lead time retrieval",
+      "status": "UNSUPPORTED",
+      "retrieval_score": 0.4057,
+      "keyword_overlap": 0.3333,
+      "evidence_snippets": [
+        "and handling fees.\n- **Hazardous / Cold-Chain Parts Handling:** Packaging surcharges are calculated based on the order value and are non-refundable. Orders below the minimum order value will incur a handling fee of 1% of",
+        "---\n\nThis document is subject to change and should be reviewed for the most current terms. For any questions, please contact the procurement department.\n```\n\nThis document outlines the commercial terms and discounts for "
+      ],
+      "evidence_sources": [
+        "supplier_terms.md"
+      ],
+      "reason": "The provided documents contain general commercial terms and emergency delivery protocols, but they do not include specific unit prices or lead times for any parts."
+    },
+    {
+      "topic": "Line-item and subtotal calculations",
+      "status": "PARTIAL",
+      "retrieval_score": 0.4284,
+      "keyword_overlap": 0.2,
+      "evidence_snippets": [
+        "and handling fees.\n- **Hazardous / Cold-Chain Parts Handling:** Packaging surcharges are calculated based on the order value and are non-refundable. Orders below the minimum order value will incur a handling fee of 1% of",
+        "---\n\nThis document is subject to change and should be reviewed for the most current terms. For any questions, please contact the procurement department.\n```\n\nThis document outlines the commercial terms and discounts for "
+      ],
+      "evidence_sources": [
+        "supplier_terms.md"
+      ],
+      "reason": "The evidence provides specific rules for calculating handling fees and finance charges, but it lacks a comprehensive framework or methodology for calculating line-item totals and subtotals."
+    },
+    {
+      "topic": "Volume discount application",
+      "status": "SUPPORTED",
+      "retrieval_score": 0.3864,
+      "keyword_overlap": 0.3333,
+      "evidence_snippets": [
+        "### SUP-01: Supplier A\n- **Payment Terms:** Net 60 days, invoiced in USD.\n- **Volume Discounts:** 5% off orders over $50,000.\n- **Minimum Order Value:** $10,000.\n- **Handling Fees:** None for orders above $10,000.\n- **Wa",
+        "### SUP-03: Supplier C\n- **Payment Terms:** Net 30 days, invoiced in USD.\n- **Volume Discounts:** 4% off orders over $40,000.\n- **Minimum Order Value:** $8,000.\n- **Handling Fees:** None for orders above $8,000.\n- **Warr"
+      ],
+      "evidence_sources": [
+        "supplier_terms.md"
+      ],
+      "reason": "The retrieved evidence provides specific volume discount percentages and the corresponding order value thresholds for four different suppliers, allowing for an accurate application of these terms."
+    },
+    {
+      "topic": "Expedited surcharge calculations",
+      "status": "SUPPORTED",
+      "retrieval_score": 0.4459,
+      "keyword_overlap": 0.3333,
+      "evidence_snippets": [
+        "### SUP-03: Supplier C\n- **Payment Terms:** Net 30 days, invoiced in USD.\n- **Volume Discounts:** 4% off orders over $40,000.\n- **Minimum Order Value:** $8,000.\n- **Handling Fees:** None for orders above $8,000.\n- **Warr",
+        "### SUP-01: Supplier A\n- **Payment Terms:** Net 60 days, invoiced in USD.\n- **Volume Discounts:** 5% off orders over $50,000.\n- **Minimum Order Value:** $10,000.\n- **Handling Fees:** None for orders above $10,000.\n- **Wa"
+      ],
+      "evidence_sources": [
+        "supplier_terms.md"
+      ],
+      "reason": "The retrieved evidence provides specific percentage-based surcharge rates for express air-freight for all four listed suppliers, allowing for accurate calculation of expedited costs."
+    },
+    {
+      "topic": "Procurement policy and approval threshold verification",
+      "status": "PARTIAL",
+      "retrieval_score": 0.5581,
+      "keyword_overlap": 0.5,
+      "evidence_snippets": [
+        "---\n\nThis document is subject to change and should be reviewed for the most current terms. For any questions, please contact the procurement department.\n```\n\nThis document outlines the commercial terms and discounts for ",
+        "## Goods Receipt & Invoice Matching\n\n- **3-Way Match Tolerance:** The tolerance for the 3-way match (invoice, packing slip, and goods receipt) is 2%. Any discrepancies must be reported within 5 working days.\n- **Discrepa"
+      ],
+      "evidence_sources": [
+        "supplier_terms.md",
+        "procurement_procedure.md"
+      ],
+      "reason": "The evidence provides a partial Requisition Approval Matrix, but the table is truncated and incomplete, missing approval thresholds for lower-value items and the full scope of the procurement policy."
+    },
+    {
+      "topic": "Source citation for catalogue rows and policy documents",
+      "status": "UNSUPPORTED",
+      "retrieval_score": 0.4452,
+      "keyword_overlap": 0.375,
+      "evidence_snippets": [
+        "## Competitive Quotes Rule\n\n- **Single Source OEM (Original Equipment Manufacturer) Exception:** When a single-source OEM quote is required for critical spare parts, the OEM quote will be considered the final quote.\n- **",
+        "---\n\nThis document is subject to change and should be reviewed for the most current terms. For any questions, please contact the procurement department.\n```\n\nThis document outlines the commercial terms and discounts for "
+      ],
+      "evidence_sources": [
+        "procurement_procedure.md",
+        "supplier_terms.md"
+      ],
+      "reason": "The retrieved evidence provides procurement rules and supplier terms but does not contain any information regarding source citation requirements or methods for catalogue rows and policy documents."
+    }
+  ],
+  "supported_topics": [
+    "Volume discount application",
+    "Expedited surcharge calculations"
+  ],
+  "partial_topics": [
+    "Spare part lookup and stock levels",
+    "Line-item and subtotal calculations",
+    "Procurement policy and approval threshold verification"
+  ],
+  "unsupported_topics": [
+    "Unit price and lead time retrieval",
+    "Source citation for catalogue rows and policy documents"
+  ],
+  "mostly_unsupported": false,
+  "warnings": [
+    "Groundability Guard flagged 2 UNSUPPORTED topic(s) and moved them to must_refuse: Unit price and lead time retrieval, Source citation for catalogue rows and policy documents"
+  ]
+}

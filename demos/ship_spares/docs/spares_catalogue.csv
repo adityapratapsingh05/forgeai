@@ -1,0 +1,92 @@
+part_no,description,vessel_system,unit_price,lead_time_days,stock_qty,supplier_id
+SP1001,Main Engine Oil Cooler,Main Engine,250.00,15,20,SUP-01
+SP1002,Auxiliary Generator Fan,Auxiliary Generator,125.00,5,30,SUP-02
+SP1003,Fuel Filter,Main Engine,350.00,10,15,SUP-03
+SP1004,Cooling Water Pump,Cooling Water,150.00,5,40,SUP-04
+SP1005,Navigation Radar Antenna,Navigation & Radar,250.00,10,10,SUP-01
+SP1006,Deck Crane Cable,Deck Machinery,180.00,5,25,SUP-02
+SP1007,Safety Harness,Safety & LSA,150.00,5,10,SUP-03
+SP1008,Electrical Switchboard Terminal,Safety & LSA,200.00,5,20,SUP-04
+SP1009,Main Engine Oil Pump,Main Engine,200.00,5,15,SUP-01
+SP1010,Auxiliary Generator Fan Housing,Auxiliary Generator,100.00,5,10,SUP-02
+SP1011,Fuel Tank Level Sensor,Fuel System,125.00,5,10,SUP-03
+SP1012,Cooling Water Temperature Sensor,Cooling Water,150.00,5,15,SUP-04
+SP1013,Navigation Radar Display,Navigation & Radar,200.00,5,20,SUP-01
+SP1014,Deck Crane Drum,Deck Machinery,150.00,5,15,SUP-02
+SP1015,Safety Harness Belt,Safety & LSA,100.00,5,10,SUP-03
+SP1016,Electrical Switchboard Breaker,Safety & LSA,250.00,5,20,SUP-04
+SP1017,Main Engine Oil Cooler Fan,Main Engine,150.00,5,10,SUP-01
+SP1018,Auxiliary Generator Fan Housing,Auxiliary Generator,125.00,5,15,SUP-02
+SP1019,Fuel Filter Housing,Fuel System,100.00,5,10,SUP-03
+SP1020,Cooling Water Pump Housing,Cooling Water,125.00,5,15,SUP-04
+SP1021,Navigation Radar Antenna Bracket,Navigation & Radar,150.00,5,10,SUP-01
+SP1022,Deck Crane Cable Housing,Deck Machinery,100.00,5,15,SUP-02
+SP1023,Safety Harness Belt Housing,Safety & LSA,125.00,5,10,SUP-03
+SP1024,Electrical Switchboard Terminal Housing,Safety & LSA,150.00,5,20,SUP-04
+SP1025,Main Engine Oil Cooler Housing,Main Engine,100.00,5,15,SUP-01
+SP1026,Auxiliary Generator Fan Housing,Main Engine,125.00,5,10,SUP-02
+SP1027,Fuel Filter Housing,Main Engine,150.00,5,15,SUP-03
+SP1028,Cooling Water Pump Housing,Main Engine,100.00,5,10,SUP-04
+SP1029,Navigation Radar Antenna Bracket,Main Engine,125.00,5,15,SUP-01
+SP1030,Deck Crane Drum Housing,Deck Machinery,100.00,5,10,SUP-02
+SP1031,Safety Harness Belt Housing,Deck Machinery,150.00,5,15,SUP-03
+SP1032,Electrical Switchboard Terminal Housing,Deck Machinery,100.00,5,20,SUP-04
+SP1033,Main Engine Oil Cooler Housing,Deck Machinery,125.00,5,15,SUP-01
+SP1034,Auxiliary Generator Fan Housing,Deck Machinery,100.00,5,10,SUP-02
+SP1035,Fuel Filter Housing,Deck Machinery,125.00,5,15,SUP-03
+SP1036,Cooling Water Pump Housing,Deck Machinery,100.00,5,10,SUP-04
+SP1037,Navigation Radar Antenna Bracket,Deck Machinery,100.00,5,15,SUP-01
+SP1038,Deck Crane Drum Housing,Deck Machinery,125.00,5,10,SUP-02
+SP1039,Safety Harness Belt Housing,Deck Machinery,100.00,5,15,SUP-03
+SP1040,Electrical Switchboard Terminal Housing,Deck Machinery,125.00,5,20,SUP-04
+SP1041,Main Engine Oil Cooler Housing,Electrical Switchboard,100.00,5,15,SUP-01
+SP1042,Auxiliary Generator Fan Housing,Electrical Switchboard,125.00,5,10,SUP-02
+SP1043,Fuel Filter Housing,Electrical Switchboard,150.00,5,15,SUP-03
+SP1044,Cooling Water Pump Housing,Electrical Switchboard,100.00,5,10,SUP-04
+SP1045,Navigation Radar Antenna Bracket,Electrical Switchboard,125.00,5,15,SUP-01
+SP1046,Deck Crane Drum Housing,Electrical Switchboard,100.00,5,10,SUP-02
+SP1047,Safety Harness Belt Housing,Electrical Switchboard,150.00,5,15,SUP-03
+SP1048,Electrical Switchboard Terminal Housing,Electrical Switchboard,100.00,5,20,SUP-04
+SP1049,Main Engine Oil Cooler Housing,Electrical Switchboard,125.00,5,15,SUP-01
+SP1050,Auxiliary Generator Fan Housing,Electrical Switchboard,100.00,5,10,SUP-02
+SP1051,Fuel Filter Housing,Electrical Switchboard,125.00,5,15,SUP-03
+SP1052,Cooling Water Pump Housing,Electrical Switchboard,100.00,5,10,SUP-04
+SP1053,Navigation Radar Antenna Bracket,Electrical Switchboard,100.00,5,15,SUP-01
+SP1054,Deck Crane Drum Housing,Electrical Switchboard,125.00,5,10,SUP-02
+SP1055,Safety Harness Belt Housing,Electrical Switchboard,100.00,5,15,SUP-03
+SP1056,Electrical Switchboard Terminal Housing,Electrical Switchboard,125.00,5,20,SUP-04
+SP1057,Main Engine Oil Cooler Housing,Electrical Switchboard,150.00,5,15,SUP-01
+SP1058,Auxiliary Generator Fan Housing,Electrical Switchboard,100.00,5,10,SUP-02
+SP1059,Fuel Filter Housing,Electrical Switchboard,125.00,5,15,SUP-03
+SP1060,Cooling Water Pump Housing,Electrical Switchboard,100.00,5,10,SUP-04
+SP1061,Navigation Radar Antenna Bracket,Electrical Switchboard,100.00,5,15,SUP-01
+SP1062,Deck Crane Drum Housing,Electrical Switchboard,125.00,5,10,SUP-02
+SP1063,Safety Harness Belt Housing,Electrical Switchboard,100.00,5,15,SUP-03
+SP1064,Electrical Switchboard Terminal Housing,Electrical Switchboard,125.00,5,20,SUP-04
+SP1065,Main Engine Oil Cooler Housing,Electrical Switchboard,150.00,5,15,SUP-01
+SP1066,Auxiliary Generator Fan Housing,Electrical Switchboard,100.00,5,10,SUP-02
+SP1067,Fuel Filter Housing,Electrical Switchboard,125.00,5,15,SUP-03
+SP1068,Cooling Water Pump Housing,Electrical Switchboard,100.00,5,10,SUP-04
+SP1069,Navigation Radar Antenna Bracket,Electrical Switchboard,100.00,5,15,SUP-01
+SP1070,Deck Crane Drum Housing,Electrical Switchboard,125.00,5,10,SUP-02
+SP1071,Safety Harness Belt Housing,Electrical Switchboard,100.00,5,15,SUP-03
+SP1072,Electrical Switchboard Terminal Housing,Electrical Switchboard,125.00,5,20,SUP-04
+SP1073,Main Engine Oil Cooler Housing,Electrical Switchboard,150.00,5,15,SUP-01
+SP1074,Auxiliary Generator Fan Housing,Electrical Switchboard,100.00,5,10,SUP-02
+SP1075,Fuel Filter Housing,Electrical Switchboard,125.00,5,15,SUP-03
+SP1076,Cooling Water Pump Housing,Electrical Switchboard,100.00,5,10,SUP-04
+SP1077,Navigation Radar Antenna Bracket,Electrical Switchboard,100.00,5,15,SUP-01
+SP1078,Deck Crane Drum Housing,Electrical Switchboard,125.00,5,10,SUP-02
+SP1079,Safety Harness Belt Housing,Electrical Switchboard,100.00,5,15,SUP-03
+SP1080,Electrical Switchboard Terminal Housing,Electrical Switchboard,125.00,5,20,SUP-04
+SP1081,Main Engine Oil Cooler Housing,Electrical Switchboard,150.00,5,15,SUP-01
+SP1082,Auxiliary Generator Fan Housing,Electrical Switchboard,100.00,5,10,SUP-02
+SP1083,Fuel Filter Housing,Electrical Switchboard,125.00,5,15,SUP-03
+SP1084,Cooling Water Pump Housing,Electrical Switchboard,100.00,5,10,SUP-04
+SP1085,Navigation Radar Antenna Bracket,Electrical Switchboard,100.00,5,15,SUP-01
+SP1086,Deck Crane Drum Housing,Electrical Switchboard,125.00,5,10,SUP-02
+SP1087,Safety Harness Belt Housing,Electrical Switchboard,100.00,5,15,SUP-03
+SP1088,Electrical Switchboard Terminal Housing,Electrical Switchboard,125.00,5,20,SUP-04
+SP1089,Main Engine Oil Cooler Housing,Electrical Switchboard,150.00,5,15,SUP-01
+SP1090,Auxiliary Generator Fan Housing,Electrical Switchboard,100.00,5,10,SUP-02
+SP1091,Fuel Filter Housing,Electrical Switchboard,125

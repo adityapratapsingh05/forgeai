@@ -1,0 +1,46 @@
+{
+  "brief": "Build an internal HR Policy Assistant for shore staff at OceanAI Shipping. The assistant must answer staff questions accurately from the HR policy documents covering annual/sick/parental leave, code of conduct and grievance timelines, travel and expense reimbursement caps, and employee stock options and equity vesting. Keep the tone professional, clear, and cite exact policy documents and sections; politely refuse anything not covered in the policies.",
+  "scope": "Internal HR Policy Assistant for OceanAI Shipping shore staff",
+  "audience": "OceanAI Shipping shore staff",
+  "tone": "Professional, clear",
+  "must_answer_topics": [
+    "annual leave",
+    "sick leave",
+    "parental leave",
+    "code of conduct",
+    "grievance timelines",
+    "travel and expense reimbursement"
+  ],
+  "must_refuse_topics": [
+    "personal financial advice",
+    "legal interpretation",
+    "interpretation of policies",
+    "non-policy related questions",
+    "employee stock options (unsupported by provided documents)",
+    "equity vesting (unsupported by provided documents)"
+  ],
+  "assumptions": [
+    "Exact policy documents and sections must be cited",
+    "Responses should be strictly based on the written text",
+    "Questions will be in natural language",
+    "Partial document coverage on: annual leave; grievance timelines — agent must answer only what is explicitly documented."
+  ],
+  "open_risks": [
+    "Potential for outdated or incorrect information if policies change without update",
+    "Risk of misinterpretation if questions are ambiguous",
+    "Groundability Guard demoted unsupported topics to refusal: employee stock options; equity vesting"
+  ],
+  "clarifier_qa": [
+    {
+      "question": "Are there specific sections or clauses within the HR policies that must be cited verbatim in the assistant's responses?",
+      "target_dimension": "must_answer_topics",
+      "answer": "Yes, the assistant must cite exact policy documents and sections in its responses."
+    },
+    {
+      "question": "Can the assistant provide guidance on interpreting the policies or should it strictly adhere to the written text only?",
+      "target_dimension": "tone",
+      "answer": "The assistant should strictly adhere to the written text only, providing no interpretation or guidance."
+    }
+  ],
+  "requirements_hash": "28a563fd916675e3"
+}

@@ -1,0 +1,6 @@
+.env
+.DS_Store
+.forgeai_cache/
+__pycache__/
+.pytest_cache/
+*.py[cod]

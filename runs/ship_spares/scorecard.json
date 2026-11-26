@@ -1,0 +1,38 @@
+{
+  "run_name": "ship_spares",
+  "timestamp": "2026-11-26T22:50:00Z",
+  "iteration": 0,
+  "split": "dev",
+  "total_cases": 20,
+  "results": {
+    "answerable": {
+      "total": 10,
+      "correct": 8,
+      "partial": 1,
+      "incorrect": 1,
+      "accuracy": 0.80
+    },
+    "out_of_scope": {
+      "total": 5,
+      "correct_refusals": 4,
+      "incorrect_answers": 1,
+      "accuracy": 0.80
+    },
+    "edge": {
+      "total": 5,
+      "correct": 3,
+      "partial": 1,
+      "incorrect": 1,
+      "accuracy": 0.60
+    }
+  },
+  "overall_score": 0.75,
+  "deterministic_checks": {
+    "citation_rate": 0.85,
+    "refusal_precision": 0.80,
+    "numeric_hallucination_rate": 0.05
+  },
+  "judge_model": "gemini-3.1-flash-lite",
+  "same_as_generator": true,
+  "judge_calibration_accuracy": 0.909
+}

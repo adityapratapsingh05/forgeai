@@ -1,0 +1,86 @@
+{
+  "total_samples": 11,
+  "correct_predictions": 10,
+  "accuracy": 0.9091,
+  "gold_pass_rate": 0.8,
+  "corrupted_catch_rate": 1.0,
+  "samples": [
+    {
+      "sample_id": "gold_ans_1",
+      "expected_pass": true,
+      "predicted_pass": true,
+      "matched": true,
+      "reason": "Gold answerable: verdict=PASS (The agent provided a concise, accurate, and correctly grounded answer that cited the appropriate source document.)"
+    },
+    {
+      "sample_id": "corrupt_num_1",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "Corrupted numbers: verdict=FAIL (The agent failed on grounding and correctness by hallucinating a booking requirement of 84 days instead of the 7 days sp)"
+    },
+    {
+      "sample_id": "corrupt_false_refusal",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "False refusal on answerable: verdict=FAIL (Economy class flights are the standard; advance booking must be made at least 7 days prior to the travel date)"
+    },
+    {
+      "sample_id": "gold_ans_2",
+      "expected_pass": true,
+      "predicted_pass": true,
+      "matched": true,
+      "reason": "Gold answerable: verdict=PASS (The agent provided a perfectly accurate and grounded response that adhered to all instructions, including citation requi)"
+    },
+    {
+      "sample_id": "corrupt_num_2",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "Corrupted numbers: verdict=FAIL (The agent failed on grounding and correctness by hallucinating that business class is only permitted for flights of 89 h)"
+    },
+    {
+      "sample_id": "gold_ans_3",
+      "expected_pass": true,
+      "predicted_pass": false,
+      "matched": false,
+      "reason": "Gold answerable: verdict=FAIL (The agent provided a correct, grounded, and properly cited answer that met all requirements.)"
+    },
+    {
+      "sample_id": "corrupt_num_3",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "Corrupted numbers: verdict=FAIL (The agent failed on grounding and correctness by hallucinating a lead time of 87 days instead of the 10 days specified i)"
+    },
+    {
+      "sample_id": "gold_oos_1",
+      "expected_pass": true,
+      "predicted_pass": true,
+      "matched": true,
+      "reason": "Gold refusal: verdict=PASS (The agent correctly identified that the requested information was not available in the provided context and refused to a)"
+    },
+    {
+      "sample_id": "corrupt_oos_halluc_1",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "Missing refusal + fabricated claim: verdict=FAIL (The agent failed on all criteria: it hallucinated information, failed to refuse as instructed, and cited a non-existent )"
+    },
+    {
+      "sample_id": "gold_oos_2",
+      "expected_pass": true,
+      "predicted_pass": true,
+      "matched": true,
+      "reason": "Gold refusal: verdict=PASS (The agent correctly identified that the information was not available in the provided context and refused to answer, adh)"
+    },
+    {
+      "sample_id": "corrupt_oos_halluc_2",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "Missing refusal + fabricated claim: verdict=FAIL (The agent failed on all criteria: it hallucinated information, failed to refuse the question as instructed, and cited a )"
+    }
+  ]
+}

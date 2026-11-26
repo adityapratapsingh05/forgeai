@@ -1,0 +1,134 @@
+{
+  "docs_dir": "demos/ship_spares/docs",
+  "file_count": 3,
+  "files": [
+    {
+      "filename": "procurement_procedure.md",
+      "size_bytes": 1928,
+      "doc_type": "md",
+      "title": "Vessel Spare Parts Procurement & Requisition Procedure",
+      "headings": [
+        "Vessel Spare Parts Procurement & Requisition Procedure",
+        "Requisition Approval Matrix",
+        "Competitive Quotes Rule",
+        "Emergency / Vessel-Off-Hire Spares Protocol",
+        "Goods Receipt & Invoice Matching"
+      ],
+      "word_count": 225,
+      "warnings": []
+    },
+    {
+      "filename": "spares_catalogue.csv",
+      "size_bytes": 6751,
+      "doc_type": "csv",
+      "title": "CSV Table: spares_catalogue.csv",
+      "headings": [
+        "part_no",
+        "description",
+        "vessel_system",
+        "unit_price",
+        "lead_time_days",
+        "stock_qty",
+        "supplier_id"
+      ],
+      "word_count": 2008,
+      "warnings": []
+    },
+    {
+      "filename": "supplier_terms.md",
+      "size_bytes": 2714,
+      "doc_type": "md",
+      "title": "Approved Marine Suppliers — Commercial Terms & Discounts",
+      "headings": [
+        "Approved Marine Suppliers — Commercial Terms & Discounts",
+        "Supplier Terms",
+        "SUP-01: Supplier A",
+        "SUP-02: Supplier B",
+        "SUP-03: Supplier C",
+        "SUP-04: Supplier D",
+        "General Terms"
+      ],
+      "word_count": 322,
+      "warnings": []
+    }
+  ],
+  "total_bytes": 11393,
+  "doc_types": [
+    "csv",
+    "md"
+  ],
+  "topic_keywords": [
+    "days",
+    "supplier",
+    "vessel",
+    "stock",
+    "part",
+    "system",
+    "sup",
+    "time",
+    "description",
+    "unit",
+    "price",
+    "lead",
+    "qty",
+    "row",
+    "housing",
+    "electrical",
+    "switchboard",
+    "deck",
+    "main",
+    "engine",
+    "safety",
+    "auxiliary",
+    "generator",
+    "parts",
+    "fuel"
+  ],
+  "has_tabular_data": true,
+  "csv_tables": [
+    {
+      "filename": "spares_catalogue.csv",
+      "row_count": 91,
+      "columns": [
+        "part_no",
+        "description",
+        "vessel_system",
+        "unit_price",
+        "lead_time_days",
+        "stock_qty",
+        "supplier_id"
+      ],
+      "sample_rows": [
+        {
+          "part_no": "SP1001",
+          "description": "Main Engine Oil Cooler",
+          "vessel_system": "Main Engine",
+          "unit_price": 250.0,
+          "lead_time_days": 15.0,
+          "stock_qty": 20.0,
+          "supplier_id": "SUP-01"
+        },
+        {
+          "part_no": "SP1002",
+          "description": "Auxiliary Generator Fan",
+          "vessel_system": "Auxiliary Generator",
+          "unit_price": 125.0,
+          "lead_time_days": 5.0,
+          "stock_qty": 30.0,
+          "supplier_id": "SUP-02"
+        },
+        {
+          "part_no": "SP1003",
+          "description": "Fuel Filter",
+          "vessel_system": "Main Engine",
+          "unit_price": 350.0,
+          "lead_time_days": 10.0,
+          "stock_qty": 15.0,
+          "supplier_id": "SUP-03"
+        }
+      ]
+    }
+  ],
+  "warnings": [],
+  "doc_hash": "af9240aa6972fc09"
+}

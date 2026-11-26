@@ -1,0 +1,38 @@
+{
+  "run_name": "hr_policy",
+  "timestamp": "2026-11-26T22:51:00Z",
+  "iteration": 0,
+  "split": "dev",
+  "total_cases": 30,
+  "results": {
+    "answerable": {
+      "total": 14,
+      "correct": 11,
+      "partial": 2,
+      "incorrect": 1,
+      "accuracy": 0.786
+    },
+    "out_of_scope": {
+      "total": 8,
+      "correct_refusals": 7,
+      "incorrect_answers": 1,
+      "accuracy": 0.875
+    },
+    "edge": {
+      "total": 8,
+      "correct": 6,
+      "partial": 1,
+      "incorrect": 1,
+      "accuracy": 0.75
+    }
+  },
+  "overall_score": 0.80,
+  "deterministic_checks": {
+    "citation_rate": 0.90,
+    "refusal_precision": 0.875,
+    "numeric_hallucination_rate": 0.03
+  },
+  "judge_model": "gemini-3.1-flash-lite",
+  "same_as_generator": true,
+  "judge_calibration_accuracy": 0.909
+}

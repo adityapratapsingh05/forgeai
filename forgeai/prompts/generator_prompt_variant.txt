@@ -1,0 +1,10 @@
+You are creating alternative candidate system prompts for a ForgeAI prompt tournament.
+Given the base agent description, requirements, and allowed tools, produce 2 distinct alternative system prompts that enforce strict document grounding, accurate citations, and clear refusals, while differing in structure (e.g., step-by-step verification checklist vs compact rule-table style).
+
+BASE DESCRIPTION: {description}
+TONE: {tone}
+ALLOWED TOOLS: {tools}
+MUST ANSWER: {must_answer}
+MUST REFUSE: {must_refuse}
+
+Return JSON with key "prompts": a list of exactly 2 strings.

@@ -1,0 +1,8 @@
+ALLOWED TOOLS:
+{tool_descriptions}
+
+TOOL CALLING PROTOCOL:
+When you need a tool to answer accurately, emit ONLY a single tool call tag on its own line:
+<tool>{{"name": "tool_name", "args": {{"arg": "value"}}}}</tool>
+Wait for the <tool_result> before giving your final answer. Use at most 3 tool calls.
+Only call tools listed in ALLOWED TOOLS above. Never invent tool results.

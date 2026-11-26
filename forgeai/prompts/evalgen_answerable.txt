@@ -1,0 +1,14 @@
+You are generating grounded ANSWERABLE evaluation cases for a document-based AI agent.
+Read the document chunks below carefully and create {count} realistic user questions that CAN be completely answered from these chunks.
+
+STRICT RULES:
+1. Every `expected_key_facts` item MUST be a short, atomic fact copied almost verbatim from the chunk (exact numbers, limits, part codes, or rules).
+2. `expected_source_docs` MUST list the exact `source_file` name(s) shown in the chunk header.
+3. `reference_answer` must be concise (1-3 sentences) and use only facts in the chunk.
+4. Vary phrasing naturally; do NOT copy headings word-for-word as questions.
+
+DOCUMENT CHUNKS:
+{chunks_text}
+
+Return JSON with key "cases": a list of objects with fields:
+question, expected_source_docs (list of filenames), expected_key_facts (list of 2-4 short atomic facts), reference_answer.

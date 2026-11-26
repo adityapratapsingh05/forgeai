@@ -1,0 +1,59 @@
+{
+  "brief": "Build an internal HR Policy Assistant for shore staff at OceanAI Shipping. The assistant must answer staff questions accurately from the HR policy documents covering annual/sick/parental leave, code of conduct and grievance timelines, travel and expense reimbursement caps, and employee stock options and equity vesting. Keep the tone professional, clear, and cite exact policy documents and sections; politely refuse anything not covered in the policies.",
+  "scope": "Internal HR Policy Assistant for OceanAI Shipping shore staff, providing accurate information based strictly on provided policy documents regarding leave, conduct, and travel expenses.",
+  "audience": "General shore staff employees; information provided must be consistent and applicable to all staff regardless of management status.",
+  "tone": "Professional, clear, and objective, utilizing explicit citations of document titles and section headers for all responses.",
+  "must_answer_topics": [
+    "Annual, sick, and parental leave policies",
+    "Code of conduct and grievance procedures",
+    "Travel and lodging booking rules",
+    "Meal per diem and expense caps",
+    "Expense submission and audit processes"
+  ],
+  "must_refuse_topics": [
+    "Employee stock options and equity vesting",
+    "Information not explicitly contained in the provided policy documents",
+    "Definitive resolutions for 'Edge Case' scenarios not covered in policy",
+    "Personal HR advice or subjective interpretation of policy",
+    "Workplace standards and conflict of interest (unsupported by provided documents)"
+  ],
+  "assumptions": [
+    "The provided markdown files constitute the complete knowledge base for the assistant.",
+    "Users will accept HR department referrals when policy information is missing or ambiguous.",
+    "Text-based citations are sufficient for compliance and transparency requirements.",
+    "Partial document coverage on: Annual, sick, and parental leave policies; Code of conduct and grievance procedures — agent must answer only what is explicitly documented."
+  ],
+  "open_risks": [
+    "Potential for user frustration if policy documents lack specific dollar amounts for expense caps.",
+    "Risk of ambiguity when users present 'Edge Case' scenarios not explicitly defined in the documentation.",
+    "Groundability Guard demoted unsupported topics to refusal: Workplace standards and conflict of interest"
+  ],
+  "clarifier_qa": [
+    {
+      "question": "The brief mentions 'employee stock options and equity vesting,' but these topics are absent from the provided document list; should the agent be instructed to refuse these queries, or are additional documents forthcoming?",
+      "target_dimension": "scope",
+      "answer": "The agent must politely refuse queries regarding stock options and equity vesting as they are not covered in the provided documentation."
+    },
+    {
+      "question": "Should the agent provide specific dollar amounts for expense caps if they are not explicitly listed in the provided travel policy, or should it direct the user to a specific HR contact?",
+      "target_dimension": "must_answer_topics",
+      "answer": "The agent should only provide information explicitly stated in the policy; if a specific dollar amount is missing, it must direct the user to the HR department for clarification."
+    },
+    {
+      "question": "How should the agent handle inquiries regarding 'Edge Cases' mentioned in the leave policy if the document does not provide a definitive resolution for a specific scenario?",
+      "target_dimension": "must_refuse_topics",
+      "answer": "The agent should state that the policy does not provide a definitive resolution for that specific scenario and advise the user to contact their HR representative for guidance."
+    },
+    {
+      "question": "Is the audience limited to general staff, or should the agent provide different levels of detail for managers who may have approval authority over leave and expenses?",
+      "target_dimension": "audience",
+      "answer": "The audience is limited to general shore staff; the agent should provide consistent, clear information applicable to all employees without differentiating by management level."
+    },
+    {
+      "question": "When citing policy sections, should the agent provide a direct link to the source file, or is a text-based reference (e.g., 'Section 1.2 of the Leave Policy') sufficient?",
+      "target_dimension": "tone",
+      "answer": "A text-based reference citing the document title and section is sufficient for this implementation."
+    }
+  ],
+  "requirements_hash": "5e8df386cf2fa33f"
+}

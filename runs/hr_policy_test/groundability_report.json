@@ -1,0 +1,136 @@
+{
+  "items": [
+    {
+      "topic": "annual leave",
+      "status": "PARTIAL",
+      "retrieval_score": 0.6704,
+      "keyword_overlap": 1.0,
+      "evidence_snippets": [
+        "## 1. Annual Paid Leave",
+        "### Annual Allowance and Medical Certificate Threshold\n- **Annual Allowance**: Employees are entitled to a maximum of 10 days of sick leave per year.\n- **Medical Certificate**: Employees must provide a medical certificat"
+      ],
+      "evidence_sources": [
+        "leave_policy.md"
+      ],
+      "reason": "The evidence provides details on annual paid leave accrual, eligibility, and thresholds, but does not explicitly cover the topic of annual leave, which typically includes sick leave and personal days, not just paid leave."
+    },
+    {
+      "topic": "sick leave",
+      "status": "SUPPORTED",
+      "retrieval_score": 0.6856,
+      "keyword_overlap": 1.0,
+      "evidence_snippets": [
+        "## 2. Sick & Medical Leave",
+        "### Annual Allowance and Medical Certificate Threshold\n- **Annual Allowance**: Employees are entitled to a maximum of 10 days of sick leave per year.\n- **Medical Certificate**: Employees must provide a medical certificat"
+      ],
+      "evidence_sources": [
+        "leave_policy.md"
+      ],
+      "reason": "The evidence directly covers the topic of sick leave, including the annual allowance, medical certificate requirements, and the process for hospitalization leave."
+    },
+    {
+      "topic": "parental leave",
+      "status": "SUPPORTED",
+      "retrieval_score": 0.6723,
+      "keyword_overlap": 1.0,
+      "evidence_snippets": [
+        "## 3. Parental & Family Leave",
+        "nsive guide for all Shore employees regarding leave and attendance policies.\n```\n\nThis document is a comprehensive and realistic corporate HR policy document, tailored to the specific requirements outlined. It covers all"
+      ],
+      "evidence_sources": [
+        "leave_policy.md"
+      ],
+      "reason": "The evidence directly covers the topic of parental leave, including maternity and paternity leave details."
+    },
+    {
+      "topic": "code of conduct",
+      "status": "SUPPORTED",
+      "retrieval_score": 0.7383,
+      "keyword_overlap": 1.0,
+      "evidence_snippets": [
+        "# Shore Staff Code of Conduct & Grievance Procedure",
+        "### Termination\n- Issued for severe infractions or violations of company policies, including but not limited to harassment, theft, or fraud.\n- Termination will be issued by the Human Resources Department and documented i"
+      ],
+      "evidence_sources": [
+        "code_of_conduct.md"
+      ],
+      "reason": "The evidence directly covers the code of conduct with sections on Termination, Suspension, and Core Workplace Standards, providing concrete information on expected staff behavior and consequences for violations."
+    },
+    {
+      "topic": "grievance timelines",
+      "status": "PARTIAL",
+      "retrieval_score": 0.6592,
+      "keyword_overlap": 0.5,
+      "evidence_snippets": [
+        "## Formal Grievance Filing & Investigation Timeline",
+        "### Filing Deadline\n- Employees must file a formal grievance within 30 days of the incident or discovery of the issue."
+      ],
+      "evidence_sources": [
+        "code_of_conduct.md"
+      ],
+      "reason": "The evidence provides information on filing deadlines and acknowledgment SLAs, but lacks details on the full investigation timeline."
+    },
+    {
+      "topic": "travel and expense reimbursement",
+      "status": "SUPPORTED",
+      "retrieval_score": 0.7684,
+      "keyword_overlap": 1.0,
+      "evidence_snippets": [
+        "# Shore Staff Travel & Expense Reimbursement Policy",
+        "## 4. Expense Submission & Audit\n- **Receipt Threshold**: Receipts for all expenses must be submitted within 3 days of returning from the trip.\n- **Submission Deadline**: Submissions must be made within 5 days of the rec"
+      ],
+      "evidence_sources": [
+        "travel_expense_policy.md"
+      ],
+      "reason": "The evidence directly covers the travel and expense reimbursement policy, including submission deadlines, receipt requirements, and specific reimbursement rates for ground transport and mileage."
+    },
+    {
+      "topic": "employee stock options",
+      "status": "UNSUPPORTED",
+      "retrieval_score": 0.4039,
+      "keyword_overlap": 0.3333,
+      "evidence_snippets": [
+        "### Edge Cases\n- **Emergency Leave**: In case of an emergency, employees are required to provide a written statement within 24 hours of the incident.\n- **Leave Carry-Over**: If an employee separates from the company, any",
+        "### Approval Workflow\n- **Short Leave**: Leave requests for 3 to 14 days are reviewed by the employee's direct supervisor and then submitted to the Human Resources department for final approval.\n- **Long Leave**: Leave r"
+      ],
+      "evidence_sources": [
+        "leave_policy.md",
+        "code_of_conduct.md"
+      ],
+      "reason": "The provided evidence does not contain any information related to employee stock options."
+    },
+    {
+      "topic": "equity vesting",
+      "status": "UNSUPPORTED",
+      "retrieval_score": 0.2559,
+      "keyword_overlap": 0.0,
+      "evidence_snippets": [
+        "### Outside Employment Approval\n- Employees are required to obtain prior approval from the Human Resources Department for any outside employment or consulting activities.\n- Approval is required at least 30 days prior to ",
+        "### Confidentiality\n- Employees are required to maintain confidentiality regarding proprietary information and trade secrets.\n- Any breaches of confidentiality will result in disciplinary action, up to and including term"
+      ],
+      "evidence_sources": [
+        "code_of_conduct.md",
+        "leave_policy.md"
+      ],
+      "reason": "The retrieved evidence does not contain any information related to equity vesting."
+    }
+  ],
+  "supported_topics": [
+    "sick leave",
+    "parental leave",
+    "code of conduct",
+    "travel and expense reimbursement"
+  ],
+  "partial_topics": [
+    "annual leave",
+    "grievance timelines"
+  ],
+  "unsupported_topics": [
+    "employee stock options",
+    "equity vesting"
+  ],
+  "mostly_unsupported": false,
+  "warnings": [
+    "Groundability Guard flagged 2 UNSUPPORTED topic(s) and moved them to must_refuse: employee stock options, equity vesting"
+  ]
+}

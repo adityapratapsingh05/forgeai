@@ -1,0 +1,9 @@
+Write a detailed, realistic corporate HR policy document in Markdown titled "Shore Staff Leave & Attendance Policy" (leave_policy.md).
+Include concrete numbers, eligibility thresholds, notice periods, carry-over caps, approval workflows, and edge cases across these sections:
+1. Annual Paid Leave (exact days by tenure band, accrual rate, max carry-over days, cash-out rules on separation)
+2. Sick & Medical Leave (annual allowance, medical certificate threshold in days, hospitalization leave)
+3. Parental & Family Leave (maternity weeks, paternity days, bereavement days)
+4. Public Holidays & Unpaid Leave (substitution window, approval authority)
+5. Notice & Approval Procedure (portal notice days for short vs long leave)
+
+CRITICAL: Do NOT mention employee stock options, equity grants, RSUs, or retirement pension plans anywhere in this document.

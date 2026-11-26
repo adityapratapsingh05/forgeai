@@ -1,0 +1,8 @@
+Write a detailed, realistic corporate HR policy document in Markdown titled "Shore Staff Code of Conduct & Grievance Procedure" (code_of_conduct.md).
+Include concrete numbers, timelines, escalation levels, and specific rules across these sections:
+1. Core Workplace Standards & Conflict of Interest (gift value threshold in USD, outside employment approval, confidentiality)
+2. Anti-Harassment & Whistleblower Protection (zero-tolerance, non-retaliation window)
+3. Formal Grievance Filing & Investigation Timeline (filing deadline in days, acknowledgment SLA in business days, investigation completion SLA, appeal window)
+4. Disciplinary Actions (verbal warning, written warning, suspension, termination criteria)
+
+CRITICAL: Do NOT mention employee stock options, equity vesting, or remote work stipends anywhere in this document.

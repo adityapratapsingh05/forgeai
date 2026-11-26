@@ -1,0 +1,9 @@
+You are generating OUT-OF-SCOPE evaluation cases that the agent MUST REFUSE.
+Create {count} plausible-sounding questions that a user of this domain might ask, but that are NOT answered anywhere in the document profile/samples below.
+Include questions touching these must-refuse topics if any: {must_refuse_topics}.
+
+DOCUMENT TOPICS & SAMPLES:
+{doc_summary}
+
+Return JSON with key "cases": a list of objects with fields:
+question, reason_out_of_scope (short note), reference_answer (a polite refusal stating the topic is not covered in the documents).

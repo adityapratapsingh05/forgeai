@@ -1,0 +1,8 @@
+Write a detailed, realistic corporate HR policy document in Markdown titled "Shore Staff Travel & Expense Reimbursement Policy" (travel_expense_policy.md).
+Include concrete numbers, currency caps, booking lead times, and reimbursement SLAs across these sections:
+1. Flight & Rail Booking Rules (economy vs business class flight-hour threshold, advance booking lead days)
+2. Lodging & Meal Per Diem Caps (nightly hotel caps domestic vs international in USD, daily meal per diem domestic vs international, alcohol exclusion)
+3. Ground Transport & Mileage (personal vehicle rate per km, ride-share vs rental car limits)
+4. Expense Submission & Audit (receipt threshold in USD, submission deadline in days after trip return, finance payout SLA)
+
+CRITICAL: Do NOT mention employee stock options, equity compensation, or relocation allowances anywhere in this document.
