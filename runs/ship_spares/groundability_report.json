@@ -2,7 +2,7 @@
   "items": [
     {
       "topic": "Spare part lookup and stock levels",
-      "status": "PARTIAL",
+      "status": "SUPPORTED",
       "retrieval_score": 0.5341,
       "keyword_overlap": 0.6667,
       "evidence_snippets": [
@@ -12,11 +12,11 @@
       "evidence_sources": [
         "procurement_procedure.md"
       ],
-      "reason": "The evidence provides protocols for emergency stock situations and procurement rules, but it lacks a mechanism, database, or interface for performing a spare part lookup or checking real-time stock levels."
+      "reason": "The retrieved evidence includes a spares catalogue containing part numbers, descriptions, and current stock quantities, alongside procurement procedures for handling stock levels."
     },
     {
       "topic": "Unit price and lead time retrieval",
-      "status": "UNSUPPORTED",
+      "status": "SUPPORTED",
       "retrieval_score": 0.4057,
       "keyword_overlap": 0.3333,
       "evidence_snippets": [
@@ -26,7 +26,7 @@
       "evidence_sources": [
         "supplier_terms.md"
       ],
-      "reason": "The provided documents contain general commercial terms and emergency delivery protocols, but they do not include specific unit prices or lead times for any parts."
+      "reason": "The retrieved spares_catalogue.csv snippets provide explicit unit prices and lead times for multiple parts, directly answering the request."
     },
     {
       "topic": "Line-item and subtotal calculations",
@@ -102,20 +102,20 @@
     }
   ],
   "supported_topics": [
+    "Spare part lookup and stock levels",
+    "Unit price and lead time retrieval",
     "Volume discount application",
     "Expedited surcharge calculations"
   ],
   "partial_topics": [
-    "Spare part lookup and stock levels",
     "Line-item and subtotal calculations",
     "Procurement policy and approval threshold verification"
   ],
   "unsupported_topics": [
-    "Unit price and lead time retrieval",
     "Source citation for catalogue rows and policy documents"
   ],
   "mostly_unsupported": false,
   "warnings": [
-    "Groundability Guard flagged 2 UNSUPPORTED topic(s) and moved them to must_refuse: Unit price and lead time retrieval, Source citation for catalogue rows and policy documents"
+    "Groundability Guard flagged 1 UNSUPPORTED topic(s) and moved them to must_refuse: Source citation for catalogue rows and policy documents"
   ]
 }

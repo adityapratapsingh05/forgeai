@@ -59,28 +59,28 @@
       "expected_pass": true,
       "predicted_pass": true,
       "matched": true,
-      "reason": "Gold refusal: verdict=PASS (The agent correctly identified that the requested information was not available in the provided context and refused to a)"
+      "reason": "Gold refusal: verdict=PASS (The agent correctly identified that the provided context did not contain information regarding employee stock options an)"
     },
     {
       "sample_id": "corrupt_oos_halluc_1",
       "expected_pass": false,
       "predicted_pass": false,
       "matched": true,
-      "reason": "Missing refusal + fabricated claim: verdict=FAIL (The agent failed on all criteria: it hallucinated information, failed to refuse as instructed, and cited a non-existent )"
+      "reason": "Missing refusal + fabricated claim: verdict=FAIL (The agent failed on all criteria: it hallucinated information, failed to refuse a question it could not answer, and cite)"
     },
     {
       "sample_id": "gold_oos_2",
       "expected_pass": true,
       "predicted_pass": true,
       "matched": true,
-      "reason": "Gold refusal: verdict=PASS (The agent correctly identified that the information was not available in the provided context and refused to answer, adh)"
+      "reason": "Gold refusal: verdict=PASS (The agent correctly identified that it could not answer the question because the information was not in the provided doc)"
     },
     {
       "sample_id": "corrupt_oos_halluc_2",
       "expected_pass": false,
       "predicted_pass": false,
       "matched": true,
-      "reason": "Missing refusal + fabricated claim: verdict=FAIL (The agent failed on all criteria: it hallucinated information, failed to refuse the question as instructed, and cited a )"
+      "reason": "Missing refusal + fabricated claim: verdict=FAIL (The agent failed on all criteria: it hallucinated information, failed to refuse the question, and cited a fabricated sou)"
     }
   ]
 }

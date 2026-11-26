@@ -1,0 +1,37 @@
+{
+  "max_iterations": 1,
+  "target_score": 0.85,
+  "iterations": [
+    {
+      "iteration": 1,
+      "dominant_failure_category": "hallucination",
+      "failures_addressed": [
+        "ans_010",
+        "ans_012",
+        "edge_020"
+      ],
+      "action_taken": "Patched grounding constraints + raised min_score 0.2->0.24: Added a strict hallucination prevention clause to explicitly forbid inferring or inventing policy details not present in the source text, addressing the pattern of the model fabricating travel and financial rules.",
+      "rationale": "Eliminate unsupported numbers/claims across 3 hallucination dev case(s).",
+      "unified_diff": "--- agent_before.yaml\n+++ agent_after.yaml\n@@ -21,4 +21,10 @@\n   for all shore staff.\n \n+  - STRICT HALLUCINATION PREVENTION: Do not infer, assume, or invent rules, thresholds,\n+  or figures not explicitly stated in the source text. If a specific policy detail\n+  (such as travel class criteria or monetary limits) is not explicitly written in\n+  the provided documents, you must state that the information is unavailable rather\n+  than attempting to fill in gaps.\n+\n \n   UNSUPPORTED TOPICS (MUST REFUSE): Do NOT claim or guess answers about: Workplace\n@@ -32,5 +38,5 @@\n   top_k: 5\n   hybrid_alpha: 0.5\n-  min_score: 0.2\n+  min_score: 0.24\n tools:\n - calculator\n",
+      "dev_score_before": 0.7682,
+      "dev_score_after": 0.7091,
+      "test_score_before": 0.6389,
+      "test_score_after": 0.6389,
+      "overall_score_before": 0.71,
+      "overall_score_after": 0.6775,
+      "per_category_before": {
+        "answerable": 0.61,
+        "out_of_scope": 1.0,
+        "edge": 0.62
+      },
+      "per_category_after": {
+        "answerable": 0.545,
+        "out_of_scope": 1.0,
+        "edge": 0.62
+      },
+      "accepted": false,
+      "status_note": "REVERTED patch (dev score delta -0.0591 < min_gain 0.005)."
+    }
+  ],
+  "stopped_reason": "early_stop_no_improvement_iter_1"
+}

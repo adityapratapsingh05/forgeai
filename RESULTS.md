@@ -2,11 +2,13 @@
 
 ## ✅ Implementation Status
 
-**Assignment status: incomplete pending two full end-to-end demo runs.** The
-current `runs/` directory contains partial HR artifacts only; it does not yet
-provide the required generated eval sets, iteration logs, scorecards, and
-reports for both HR and Ship Spares. The passing unit tests below do not verify
-full pipeline execution.
+**Assignment status: incomplete pending model-backed optimizer runs.** Both
+demo directories contain requirements, definitions, eval sets, scorecards, and
+reports, but both scorecards are from iteration 0 and neither directory has an
+iteration log. These artifacts do not demonstrate the required targeted
+optimization and before/after scores. The current groundability code now
+recognizes matching CSV fields; the existing Ship Spares artifacts predate that
+fix and need to be regenerated.
 
 ### Completed Features
 
@@ -21,51 +23,17 @@ full pipeline execution.
 | Agent Generator | ✅ Complete | Declarative YAML output |
 | Eval Generation | ⚠️ Partial | Works but slow with 7B model |
 | Judge System | ✅ Complete | Deterministic + defended LLM judge |
-| Critic-Optimizer | ⚠️ Partial | Loop structure works, needs optimization |
+| Critic-Optimizer | ⚠️ Partial | Loop is implemented, but demo runs have no optimizer iterations |
 | Report Generator | ✅ Complete | Honest assessment with trust notes |
 | CLI Runner | ✅ Complete | Generic chat interface |
 | Streamlit UI | ✅ Complete | Enhanced with chat history |
-| Test Suite | ✅ Complete | 29/29 tests passing |
+| Test Suite | ✅ Complete | 30/30 tests passing |
 
 ### Test Results
 
-```bash
-$ python3 -m pytest -v
-
-======================== test session starts =========================
-collected 29 items
-
-tests/test_guard_generator_eval_judge_opt.py::test_groundability_deterministic_floor PASSED [  3%]
-tests/test_guard_generator_eval_judge_opt.py::test_tool_selection_post_check PASSED [  6%]
-tests/test_guard_generator_eval_judge_opt.py::test_evalgen_quality_filters PASSED [ 10%]
-tests/test_guard_generator_eval_judge_opt.py::test_deterministic_judge_and_calibration PASSED [ 13%]
-tests/test_guard_generator_eval_judge_opt.py::test_optimizer_hard_cap_and_revert PASSED [ 17%]
-tests/test_ingest_retrieval.py::test_chunking_strategies_and_metadata PASSED [ 20%]
-tests/test_ingest_retrieval.py::test_token_overlap_ratio PASSED [ 24%]
-tests/test_ingest_retrieval.py::test_hybrid_retrieval_dense_scores_avoid_blas_matmul_errors PASSED [ 27%]
-tests/test_llm_and_intake.py::test_strip_code_fences PASSED [ 31%]
-tests/test_llm_and_intake.py::test_json_call_repairs_and_caches PASSED [ 34%]
-tests/test_llm_and_intake.py::test_json_call_raises_after_max_repairs PASSED [ 37%]
-tests/test_llm_and_intake.py::test_llm_unavailable_fails_loudly PASSED [ 41%]
-tests/test_llm_and_intake.py::test_chat_rate_limit_retry_honors_provider_delay[headers0-Please try again in 2s.-0.25] PASSED [ 44%]
-tests/test_llm_and_intake.py::test_chat_rate_limit_retry_honors_provider_delay[headers1-Rate limit reached. Please try again in 17.1525s.-17.1525] PASSED [ 48%]
-tests/test_llm_and_intake.py::test_chat_rate_limit_retry_honors_provider_delay[headers2-Rate limit reached.-3.5] PASSED [ 51%]
-tests/test_llm_and_intake.py::test_local_embeddings_use_fastembed_and_cache PASSED [ 55%]
-tests/test_llm_and_intake.py::test_intake_question_cap_enforced PASSED [ 58%]
-tests/test_tools.py::test_calculator_valid_expressions PASSED [ 62%]
-tests/test_tools.py::test_calculator_blocks_unsafe_expressions[__import__('os').system('echo hi')] PASSED [ 65%]
-tests/test_tools.py::test_calculator_blocks_unsafe_expressions[open('/etc/passwd').read()] PASSED [ 68%]
-tests/test_tools.py::test_calculator_blocks_unsafe_expressions[(1).__class__.__mro__] PASSED [ 72%]
-tests/test_tools.py::test_calculator_blocks_unsafe_expressions[2 ** 5000] PASSED [ 75%]
-tests/test_tools.py::test_calculator_blocks_unsafe_expressions[10 / 0] PASSED [ 79%]
-tests/test_tools.py::test_calculator_blocks_unsafe_expressions[True + 1] PASSED [ 82%]
-tests/test_tools.py::test_calculator_blocks_unsafe_expressions[lambda x: x] PASSED [ 86%]
-tests/test_tools.py::test_calculator_blocks_unsafe_expressions[[x for x in [1,2]]] PASSED [ 89%]
-tests/test_tools.py::test_csv_lookup_filters_and_query PASSED [ 93%]
-tests/test_tools.py::test_current_date_tool PASSED [ 96%]
-tests/test_tools.py::test_open_meteo_graceful_offline PASSED [100%]
-
-======================== 29 passed in 1.58s ==========================
+```text
+python3 -m pytest -q
+30 passed
 ```
 
 ## 📊 Generated Agent Examples
@@ -93,11 +61,11 @@ tests/test_tools.py::test_open_meteo_graceful_offline PASSED [100%]
 ❌ **"Can you tell me about stock options?"** (Refusal expected)
 > Expected: "I cannot answer this based on the provided documents..."
 
-### Ship Spares Assistant (Planned)
+### Ship Spares Assistant (Existing artifacts need regeneration)
 
 **Brief:** "Build a Ship Spares Procurement Assistant to help maritime engineers find spare parts, check availability, calculate costs, and understand procurement procedures."
 
-**Expected Tools:** 
+**Configured Tools:**
 - `csv_lookup` (for spares_catalogue.csv)
 - `calculator` (for cost calculations)
 
@@ -203,12 +171,12 @@ tests/test_tools.py::test_open_meteo_graceful_offline PASSED [100%]
 
 ## ✅ Verified Locally / ⏳ Still Required
 
-- ⏳ End-to-end pipeline from brief → tested agent on both required demo domains
+- ⏳ Model-backed end-to-end pipelines and optimizer iteration evidence for both demo domains
 - ✅ Automatic tool selection with post-verification
 - ✅ Groundability guard rejects unsupported briefs
 - ✅ Honest reporting (no 100% claims)
-- ✅ Generic runner works with any generated agent
-- ✅ 29 unit tests pass (coverage percentage not measured)
+- ✅ Generic runner implementation is present; live model-backed chat is not verified in this run
+- ✅ 30 unit tests pass (coverage percentage not measured)
 - ✅ Clear documentation for users
 - ✅ Deployable Streamlit UI
 
@@ -219,9 +187,9 @@ The unit-test suite passes and the code implements the main pipeline stages:
 - Transparent evaluation (calibrated judge, deterministic fallbacks)
 - Retrieval, tools, and a generic runner
 
-However, the required end-to-end run artifacts are missing for the two demo
-domains, so assignment completion has not been demonstrated. A remote
-OpenAI-compatible provider can be configured; the provider/API key and model
-availability must be verified before producing those artifacts.
+However, the existing demo artifacts show zero optimizer iterations and lack
+iteration logs. The Ship Spares artifacts also predate the CSV-groundability
+fix. Full model-backed runs on both demos are still required to demonstrate
+assignment completion; provider/API availability must be verified first.
 
 **Overall: implementation substantially present; assignment evidence pending.**

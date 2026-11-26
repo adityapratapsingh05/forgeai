@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import re
 from pathlib import Path
 from typing import Literal
 
@@ -12,9 +13,19 @@ from forgeai.config import render_prompt
 from forgeai.intake import save_requirements
 from forgeai.llm import LLMClient
 from forgeai.retrieval import HybridRetriever, token_overlap_ratio
-from forgeai.schemas import GroundabilityItem, GroundabilityReport, RequirementsSpec
+from forgeai.schemas import (
+    GroundabilityItem,
+    GroundabilityReport,
+    RequirementsSpec,
+    RetrievedChunkHit,
+)
 
 logger = logging.getLogger(__name__)
+
+_FIELD_STOPWORDS = {
+    "and", "or", "the", "a", "an", "for", "of", "to", "in", "on",
+    "lookup", "look", "up", "retrieve", "retrieval", "search", "find", "query",
+}
 
 
 class _LLMGroundabilityVerdict(BaseModel):
@@ -22,12 +33,53 @@ class _LLMGroundabilityVerdict(BaseModel):
     reason: str
 
 
+def _structured_csv_evidence(topic: str, retriever: HybridRetriever) -> list[RetrievedChunkHit]:
+    """Include CSV rows when a requested topic names fields present in the table schema."""
+    topic_terms = {
+        term
+        for term in re.findall(r"[a-z0-9]+", topic.lower())
+        if len(term) > 2 and term not in _FIELD_STOPWORDS
+    }
+    if not topic_terms:
+        return []
+
+    evidence: list[RetrievedChunkHit] = []
+    for chunk in retriever.chunks:
+        if chunk.doc_type.lower() != "csv":
+            continue
+        header = chunk.text.splitlines()[0] if chunk.text else ""
+        column_match = re.search(r"\(columns:\s*([^)]+)\)", header, flags=re.IGNORECASE)
+        if not column_match or not any(line.startswith("Row ") for line in chunk.text.splitlines()[1:]):
+            continue
+
+        column_terms = set(re.findall(r"[a-z0-9]+", column_match.group(1).lower()))
+        matched_terms = topic_terms & column_terms
+        if not matched_terms or len(matched_terms) / len(topic_terms) < 0.5:
+            continue
+
+        evidence.append(
+            RetrievedChunkHit(
+                chunk_id=chunk.chunk_id,
+                source_file=chunk.source_file,
+                page_or_section=chunk.page_or_section,
+                text=chunk.text,
+                score=round(len(matched_terms) / len(topic_terms), 4),
+            )
+        )
+        if len(evidence) == 2:
+            break
+    return evidence
+
+
 def assess_topic_deterministically(
     llm_status: Literal["SUPPORTED", "PARTIAL", "UNSUPPORTED"],
     max_score: float,
     keyword_overlap: float,
+    structured_support: bool = False,
 ) -> Literal["SUPPORTED", "PARTIAL", "UNSUPPORTED"]:
     """Combine LLM judgment with deterministic retrieval & keyword-overlap floors."""
+    if structured_support:
+        return "SUPPORTED"
     if max_score < 0.14 or keyword_overlap < 0.18:
         if max_score < 0.10 and keyword_overlap < 0.15:
             return "UNSUPPORTED"
@@ -59,6 +111,9 @@ def run_groundability_guard(
 
     for topic in topics:
         hits = retriever.search(topic, top_k=4, apply_min_score=False)
+        structured_hits = _structured_csv_evidence(topic, retriever)
+        existing_ids = {hit.chunk_id for hit in hits}
+        hits.extend(hit for hit in structured_hits if hit.chunk_id not in existing_ids)
         max_score = hits[0].score if hits else 0.0
         snippet_texts = [h.text for h in hits]
         overlap = token_overlap_ratio(topic, snippet_texts)
@@ -77,7 +132,12 @@ def run_groundability_guard(
             evidence_text=evidence_text,
         )
         verdict = llm.json_call(prompt, _LLMGroundabilityVerdict, temperature=0.0, max_tokens=400)
-        final_status = assess_topic_deterministically(verdict.status, max_score, overlap)
+        final_status = assess_topic_deterministically(
+            verdict.status,
+            max_score,
+            overlap,
+            structured_support=bool(structured_hits),
+        )
 
         item = GroundabilityItem(
             topic=topic,

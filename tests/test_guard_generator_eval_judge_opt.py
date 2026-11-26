@@ -12,10 +12,12 @@ from forgeai.budget import BudgetTracker
 from forgeai.config import Settings
 from forgeai.evalgen import jaccard_similarity, sample_diverse_chunks, verify_fact_in_text
 from forgeai.generator import enforce_tool_selection
-from forgeai.groundability import assess_topic_deterministically
+from forgeai.groundability import assess_topic_deterministically, run_groundability_guard
+from forgeai.ingest import ingest_corpus
 from forgeai.judge import classify_failure, run_deterministic_checks, run_judge_calibration
 from forgeai.llm import LLMClient
 from forgeai.optimizer import HARD_MAX_ITERATIONS, _contains_eval_question, run_optimizer
+from forgeai.retrieval import HybridRetriever
 from forgeai.schemas import (
     AgentDefinition,
     AgentResponse,
@@ -38,6 +40,42 @@ def test_groundability_deterministic_floor() -> None:
     assert assess_topic_deterministically("SUPPORTED", max_score=0.05, keyword_overlap=0.05) == "UNSUPPORTED"
     assert assess_topic_deterministically("SUPPORTED", max_score=0.45, keyword_overlap=0.50) == "SUPPORTED"
     assert assess_topic_deterministically("SUPPORTED", max_score=0.35, keyword_overlap=0.10) == "PARTIAL"
+
+
+def test_groundability_recognizes_csv_fields_even_when_judge_disagrees(tmp_path: Path) -> None:
+    docs_dir = tmp_path / "docs"
+    docs_dir.mkdir()
+    (docs_dir / "spares_catalogue.csv").write_text(
+        "part_no,part_name,unit_price,lead_time_days\n"
+        "SP1001,Main Engine Oil Cooler,1250,15\n",
+        encoding="utf-8",
+    )
+    requirements = RequirementsSpec(
+        brief="Look up spare-part pricing and lead times.",
+        scope="Spares catalogue",
+        audience="Procurement officers",
+        tone="technical",
+        must_answer_topics=["Unit price and lead time retrieval"],
+    )
+    retrieval = RetrievalConfig(hybrid_alpha=0.0)
+    corpus = ingest_corpus(docs_dir, retrieval)
+    retriever = HybridRetriever(corpus.chunks, retrieval)
+
+    class RejectingGroundabilityJudge:
+        def json_call(self, prompt, pydantic_schema, **kwargs):
+            return pydantic_schema(status="UNSUPPORTED", reason="No matching prose evidence.")
+
+    report, updated_requirements = run_groundability_guard(
+        requirements=requirements,
+        retriever=retriever,
+        llm=RejectingGroundabilityJudge(),
+        run_dir=tmp_path / "run",
+    )
+
+    assert report.items[0].status == "SUPPORTED"
+    assert "spares_catalogue.csv" in report.items[0].evidence_sources
+    assert updated_requirements.must_answer_topics == ["Unit price and lead time retrieval"]
+    assert not updated_requirements.must_refuse_topics
 
 
 def test_tool_selection_post_check() -> None:

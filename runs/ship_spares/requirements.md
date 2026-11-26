@@ -1,6 +1,6 @@
 # Requirements Specification
 
-**Requirements Hash:** `dc4be75b4b03ea90`
+**Requirements Hash:** `2429f250b4f5a379`
 
 ## Original Brief
 Build a Ship-Spares Procurement Assistant for marine purchasing officers. The assistant must look up spare parts, stock levels, unit prices, and lead times from the spares catalogue CSV, apply supplier commercial terms and approval thresholds from the procurement documents, and calculate exact line-item totals, multi-part order subtotals, volume discounts, and expedited surcharges. Cite exact catalogue rows and documents, and refuse requests outside the spares catalogue and procurement policies.
@@ -16,6 +16,7 @@ Strictly objective and technical.
 
 ## Must-Answer Topics
 - Spare part lookup and stock levels
+- Unit price and lead time retrieval
 - Line-item and subtotal calculations
 - Volume discount application
 - Expedited surcharge calculations
@@ -27,19 +28,18 @@ Strictly objective and technical.
 - Triggering external procurement workflows
 - Speculative pricing or external market data
 - Currency conversion requests
-- Unit price and lead time retrieval (unsupported by provided documents)
 - Source citation for catalogue rows and policy documents (unsupported by provided documents)
 
 ## Assumptions
 - All unit prices and commercial terms are provided in a single base currency.
 - The spares_catalogue.csv is the sole source of truth for part availability.
 - Procurement procedures and supplier terms are static and current.
-- Partial document coverage on: Spare part lookup and stock levels; Line-item and subtotal calculations; Procurement policy and approval threshold verification — agent must answer only what is explicitly documented.
+- Partial document coverage on: Line-item and subtotal calculations; Procurement policy and approval threshold verification — agent must answer only what is explicitly documented.
 
 ## Open Risks
 - Potential for outdated data if the CSV or markdown files are not synchronized with live inventory.
 - Complexity in interpreting overlapping supplier terms for multi-part orders.
-- Groundability Guard demoted unsupported topics to refusal: Unit price and lead time retrieval; Source citation for catalogue rows and policy documents
+- Groundability Guard demoted unsupported topics to refusal: Source citation for catalogue rows and policy documents
 
 ## Clarifying Q&A
 - **[scope] Should the agent automatically trigger a procurement workflow (e.g., drafting a requisition email) once a total is calculated, or is its scope strictly limited to providing information and calculations?**

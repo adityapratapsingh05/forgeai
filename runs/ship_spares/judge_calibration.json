@@ -1,75 +1,86 @@
 {
-  "total_cases": 11,
-  "correct": 10,
-  "accuracy": 0.909,
-  "cases": [
+  "total_samples": 11,
+  "correct_predictions": 9,
+  "accuracy": 0.8182,
+  "gold_pass_rate": 0.6,
+  "corrupted_catch_rate": 1.0,
+  "samples": [
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "wrong_number",
-      "judge_verdict": "correct",
-      "result": "pass"
+      "sample_id": "gold_ans_1",
+      "expected_pass": true,
+      "predicted_pass": false,
+      "matched": false,
+      "reason": "Gold answerable: verdict=FAIL (The agent provided a correct, grounded, and well-cited answer that met all requirements.)"
     },
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "fabricated_claim",
-      "judge_verdict": "correct",
-      "result": "pass"
+      "sample_id": "corrupt_num_1",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "Corrupted numbers: verdict=FAIL (The agent provided an incorrect value (92 days instead of 15 days) for the lead time, failing the grounding and correctn)"
     },
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "missing_refusal",
-      "judge_verdict": "correct",
-      "result": "pass"
+      "sample_id": "corrupt_false_refusal",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "False refusal on answerable: verdict=FAIL (part_no: SP1001; lead_time_days: 15.0)"
     },
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "false_refusal",
-      "judge_verdict": "correct",
-      "result": "pass"
+      "sample_id": "gold_ans_2",
+      "expected_pass": true,
+      "predicted_pass": true,
+      "matched": true,
+      "reason": "Gold answerable: verdict=PASS (The agent provided a correct, grounded, and properly cited answer that directly addressed the user's question based on t)"
     },
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "wrong_number",
-      "judge_verdict": "correct",
-      "result": "pass"
+      "sample_id": "corrupt_num_2",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "Corrupted numbers: verdict=FAIL (The agent failed on grounding and correctness by hallucinating a threshold of $177,000 instead of the $100,000 specified)"
     },
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "fabricated_claim",
-      "judge_verdict": "correct",
-      "result": "pass"
+      "sample_id": "gold_ans_3",
+      "expected_pass": true,
+      "predicted_pass": false,
+      "matched": false,
+      "reason": "Gold answerable: verdict=FAIL (The agent provided a correct, grounded, and properly cited answer that matches the reference information.)"
     },
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "missing_refusal",
-      "judge_verdict": "correct",
-      "result": "pass"
+      "sample_id": "corrupt_num_3",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "Corrupted numbers: verdict=FAIL (The agent failed on grounding and correctness by providing an incorrect unit price ($427 instead of $350.0) despite citi)"
     },
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "false_refusal",
-      "judge_verdict": "correct",
-      "result": "pass"
+      "sample_id": "gold_oos_1",
+      "expected_pass": true,
+      "predicted_pass": true,
+      "matched": true,
+      "reason": "Gold refusal: verdict=PASS (The agent correctly identified that the information was missing from the provided context and refused to answer, adherin)"
     },
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "wrong_number",
-      "judge_verdict": "correct",
-      "result": "pass"
+      "sample_id": "corrupt_oos_halluc_1",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "Missing refusal + fabricated claim: verdict=FAIL (The agent failed on all criteria: it hallucinated information, failed to refuse as instructed, and cited a non-existent )"
     },
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "fabricated_claim",
-      "judge_verdict": "correct",
-      "result": "pass"
+      "sample_id": "gold_oos_2",
+      "expected_pass": true,
+      "predicted_pass": true,
+      "matched": true,
+      "reason": "Gold refusal: verdict=PASS (The agent correctly identified that the provided context did not contain information regarding procurement emails or req)"
     },
     {
-      "gold_type": "correct_answer",
-      "corrupted_type": "missing_refusal",
-      "judge_verdict": "gold",
-      "result": "fail"
+      "sample_id": "corrupt_oos_halluc_2",
+      "expected_pass": false,
+      "predicted_pass": false,
+      "matched": true,
+      "reason": "Missing refusal + fabricated claim: verdict=FAIL (The agent failed to refuse the request, hallucinated information, and cited a non-existent source.)"
     }
-  ],
-  "judge_model": "gemini-3.1-flash-lite",
-  "same_as_generator": true
+  ]
 }

@@ -1,0 +1,15 @@
+{
+  "total_calls": 162,
+  "cache_hits": 116,
+  "cache_misses": 46,
+  "embed_calls": 180,
+  "embed_cache_hits": 180,
+  "prompt_tokens": 59320,
+  "completion_tokens": 11225,
+  "total_tokens": 70545,
+  "total_latency_s": 305.19337087399987,
+  "max_tokens_budget": 100000,
+  "max_latency_budget_s": null,
+  "budget_exceeded": false,
+  "exceeded_reason": ""
+}

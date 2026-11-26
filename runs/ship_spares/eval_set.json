@@ -211,10 +211,10 @@
       "id": "oos_014",
       "category": "out_of_scope",
       "edge_subtype": "",
-      "question": "What is the current market price for a 50mm hydraulic valve, and how does it compare to the supplier's price?",
+      "question": "Can you draft a formal procurement requisition email to the supplier for 50 units of the main engine housing?",
       "expected_source_docs": [],
       "expected_key_facts": [],
-      "reference_answer": "I do not have access to external market data or speculative pricing. I can only provide information regarding parts listed in the official spares catalogue.",
+      "reference_answer": "I am unable to draft procurement emails or requisitions. My capabilities are limited to providing information from the spares catalogue and procurement policy documents.",
       "expected_behavior": "refuse",
       "requires_tool": "",
       "source_chunk_id": ""
@@ -223,10 +223,10 @@
       "id": "oos_015",
       "category": "out_of_scope",
       "edge_subtype": "",
-      "question": "Which specific row number in the spares_catalogue.csv file contains the information for the main engine piston?",
+      "question": "Which specific policy document or catalogue row confirms that the lead time for the deck switchboard is exactly 14 days?",
       "expected_source_docs": [],
       "expected_key_facts": [],
-      "reference_answer": "I cannot provide source citations or specific row numbers for the documents provided. I can, however, assist you with information regarding part availability and procurement policies.",
+      "reference_answer": "I am unable to provide specific source citations or references to catalogue rows or policy documents. I can only provide the information retrieved directly from the system.",
       "expected_behavior": "refuse",
       "requires_tool": "",
       "source_chunk_id": ""
@@ -346,10 +346,10 @@
     "oos_014"
   ],
   "filter_stats": {
-    "raw_generated": 22,
+    "raw_generated": 21,
     "discarded_duplicate": 0,
     "discarded_ungrounded_facts": 0,
-    "discarded_oos_matched_docs": 2,
+    "discarded_oos_matched_docs": 1,
     "discarded_invalid_schema": 0,
     "kept_total": 20,
     "kept_by_category": {

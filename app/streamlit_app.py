@@ -23,40 +23,195 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
+# ForgeAI dashboard styling
 st.markdown("""
 <style>
-    .stTextInput>div>div>input, .stTextArea>div>div>textarea {
-        background-color: #f0f2f6;
+    :root {
+        --forge-bg: #0b1020;
+        --forge-panel: #111a2e;
+        --forge-border: rgba(148, 163, 184, 0.16);
+        --forge-text: #e8eefb;
+        --forge-muted: #9aa9c2;
+        --forge-cyan: #62d5e8;
+        --forge-violet: #9b8cff;
     }
-    .chat-message {
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin-bottom: 1rem;
-        border-left: 4px solid #1f77b4;
+
+    .stApp {
+        color: var(--forge-text);
+        background:
+            radial-gradient(ellipse at 12% 0%, rgba(52, 94, 172, 0.18), transparent 34rem),
+            radial-gradient(ellipse at 92% 18%, rgba(109, 78, 196, 0.13), transparent 30rem),
+            var(--forge-bg);
     }
-    .citation {
-        font-size: 0.85rem;
-        color: #666;
-        font-style: italic;
+
+    [data-testid="stHeader"] {
+        background: rgba(11, 16, 32, 0.72);
+    }
+
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #101a30 0%, #0c1425 100%);
+        border-right: 1px solid var(--forge-border);
+    }
+
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
+        color: var(--forge-muted);
+    }
+
+    .block-container {
+        max-width: 1440px;
+        padding-top: 2.4rem;
+        padding-bottom: 4rem;
+    }
+
+    .forge-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 2rem 2.2rem;
+        margin: 0 0 1.8rem;
+        border: 1px solid rgba(133, 161, 213, 0.22);
+        border-radius: 24px;
+        background: linear-gradient(118deg, rgba(23, 39, 68, 0.97), rgba(20, 27, 53, 0.94) 56%, rgba(44, 35, 83, 0.88));
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+    }
+
+    .forge-hero:after {
+        content: "";
+        position: absolute;
+        width: 18rem;
+        height: 18rem;
+        right: -5rem;
+        top: -9rem;
+        border-radius: 50%;
+        background: rgba(98, 213, 232, 0.12);
+        filter: blur(2px);
+    }
+
+    .forge-eyebrow {
+        color: var(--forge-cyan);
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 0.55rem;
+    }
+
+    .forge-hero h1 {
+        color: #f5f7ff;
+        font-size: clamp(2rem, 4vw, 3.1rem);
+        line-height: 1.08;
+        letter-spacing: -0.045em;
+        margin: 0;
+    }
+
+    .forge-hero p {
+        color: #b6c4dc;
+        font-size: 1.03rem;
+        margin: 0.85rem 0 0;
+        max-width: 48rem;
+    }
+
+    [data-testid="stTabs"] [role="tablist"] {
+        gap: 0.55rem;
+        border-bottom: 1px solid var(--forge-border);
+    }
+
+    [data-testid="stTabs"] button[role="tab"] {
+        color: #aab8d0;
+        border-radius: 12px 12px 0 0;
+        padding: 0.8rem 1.15rem;
+    }
+
+    [data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+        color: #f5f7ff;
+        border-bottom-color: var(--forge-cyan);
+        background: rgba(98, 213, 232, 0.08);
+    }
+
+    h2, h3 {
+        color: #f2f5ff;
+        letter-spacing: -0.025em;
+    }
+
+    [data-testid="stTextInput"] input,
+    [data-testid="stTextArea"] textarea,
+    [data-testid="stSelectbox"] [data-baseweb="select"] > div,
+    [data-testid="stNumberInput"] input {
+        color: var(--forge-text);
+        background: rgba(13, 22, 39, 0.9);
+        border-color: rgba(148, 163, 184, 0.25);
+        border-radius: 10px;
+    }
+
+    [data-testid="stFileUploader"] section {
+        border: 1px dashed rgba(98, 213, 232, 0.38);
+        border-radius: 14px;
+        background: rgba(17, 26, 46, 0.6);
+    }
+
+    [data-testid="stFileUploader"] section:hover {
+        border-color: var(--forge-cyan);
+    }
+
+    .stButton > button,
+    [data-testid="stFormSubmitButton"] button {
+        border-radius: 10px;
+        font-weight: 650;
+        transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+    }
+
+    .stButton > button:hover,
+    [data-testid="stFormSubmitButton"] button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 22px rgba(68, 127, 210, 0.2);
+    }
+
+    [data-testid="stExpander"] {
+        border: 1px solid var(--forge-border);
+        border-radius: 12px;
+        background: rgba(17, 26, 46, 0.62);
+    }
+
+    [data-testid="stAlert"] {
+        border-radius: 12px;
+    }
+
+    .forge-caption {
+        color: var(--forge-muted);
+        font-size: 0.9rem;
+        margin-top: -0.45rem;
+        margin-bottom: 1.2rem;
+    }
+
+    @media (max-width: 700px) {
+        .block-container { padding: 1.3rem 1rem 3rem; }
+        .forge-hero { padding: 1.5rem; border-radius: 18px; }
     }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🤖 ForgeAI — Autonomous Agent Factory & Runner")
+st.markdown("""
+<section class="forge-hero">
+    <div class="forge-eyebrow">ForgeAI · Agent workspace</div>
+    <h1>Build agents that know their sources.</h1>
+    <p>Turn your documents into useful, evaluated AI agents — then put them to work in a grounded chat.</p>
+</section>
+""", unsafe_allow_html=True)
 
 settings = load_settings()
-st.sidebar.header("Backend Configuration")
-st.sidebar.text(f"Base URL: {settings.llm_base_url}")
-st.sidebar.text(f"Model: {settings.llm_model}")
-st.sidebar.text(f"Embed: {settings.embed_model}")
-st.sidebar.text(f"Judge: {settings.judge_model}")
-st.sidebar.caption("Configure via .env or Streamlit secrets (LLM_BASE_URL, LLM_MODEL, LLM_API_KEY, EMBED_MODEL).")
+st.sidebar.markdown("## ⚙️ Workspace")
+st.sidebar.caption("Connected model configuration")
+st.sidebar.markdown(f"**Model**  \n`{settings.llm_model}`")
+st.sidebar.markdown(f"**Embeddings**  \n`{settings.embed_model}`")
+st.sidebar.markdown(f"**Judge**  \n`{settings.judge_model}`")
+st.sidebar.caption(f"API endpoint: {settings.llm_base_url}")
+st.sidebar.divider()
+st.sidebar.caption("Configure via `.env` or Streamlit secrets. API keys are never displayed here.")
 
 tab_factory, tab_runner = st.tabs(["Agent Factory", "Chat Runner"])
 
 with tab_factory:
-    st.subheader("Build & Optimize an Agent from Brief + Documents")
+    st.subheader("Create an agent")
+    st.markdown('<p class="forge-caption">Define its purpose, add trusted source documents, and let ForgeAI build and evaluate it.</p>', unsafe_allow_html=True)
     run_name = st.text_input("Run Name", value="streamlit_run")
     brief = st.text_area(
         "One-Paragraph Brief",
@@ -67,6 +222,7 @@ with tab_factory:
         "Upload Documents (PDF, MD, TXT, CSV, DOCX)",
         accept_multiple_files=True,
     )
+    st.markdown("#### Evaluation settings")
     col1, col2, col3 = st.columns(3)
     max_iters = col1.number_input("Max Optimizer Iters", min_value=0, max_value=3, value=3)
     eval_count = col2.number_input("Eval Cases", min_value=20, max_value=50, value=25)
@@ -99,7 +255,8 @@ with tab_factory:
                         st.error(f"Factory failed: {exc}")
 
     st.divider()
-    st.subheader("Inspect Existing Runs")
+    st.subheader("Your agent runs")
+    st.markdown('<p class="forge-caption">Review generated reports, definitions, and optimization artifacts.</p>', unsafe_allow_html=True)
     runs_dir = Path("runs")
     available_runs = sorted([p.name for p in runs_dir.iterdir() if p.is_dir()]) if runs_dir.exists() else []
     if available_runs:
@@ -121,7 +278,8 @@ with tab_factory:
         st.info("No runs found under `runs/` yet.")
 
 with tab_runner:
-    st.subheader("💬 Chat with Any Generated Agent")
+    st.subheader("Chat with an agent")
+    st.markdown('<p class="forge-caption">Load a generated agent and ask questions grounded in its document library.</p>', unsafe_allow_html=True)
 
     # Initialize session state for chat history
     if "chat_history" not in st.session_state:
@@ -180,13 +338,13 @@ with tab_runner:
     # Chat interface
     if st.session_state.runner:
         # Display chat history
-        for i, (q, a, citations) in enumerate(st.session_state.chat_history):
-            with st.container():
-                st.markdown(f"**You:** {q}")
-                st.markdown(f"**Agent:** {a}")
+        for q, a, citations in st.session_state.chat_history:
+            with st.chat_message("user"):
+                st.markdown(q)
+            with st.chat_message("assistant", avatar="✨"):
+                st.markdown(a)
                 if citations:
-                    st.caption(f"📚 Citations: {', '.join(citations)}")
-                st.divider()
+                    st.caption(f"📚 Sources: {', '.join(citations)}")
 
         # Input form
         with st.form(key="question_form", clear_on_submit=True):
@@ -200,9 +358,10 @@ with tab_runner:
                     st.session_state.chat_history.append((user_q, resp.answer, resp.citations))
 
                     # Display the latest response
-                    st.markdown(f"**Agent:** {resp.answer}")
-                    if resp.citations:
-                        st.caption(f"📚 Citations: {', '.join(resp.citations)}")
+                    with st.chat_message("assistant", avatar="✨"):
+                        st.markdown(resp.answer)
+                        if resp.citations:
+                            st.caption(f"📚 Sources: {', '.join(resp.citations)}")
 
                     if debug_mode:
                         with st.expander("🔍 Debug Information"):
