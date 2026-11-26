@@ -1,6 +1,12 @@
 # ForgeAI — Autonomous Agent Factory
 
+[![Deploy to Streamlit Cloud](https://img.shields.io/badge/Deploy-Streamlit%20Cloud-FF4B4B?logo=streamlit&logoColor=white)](https://share.streamlit.io/)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 ForgeAI takes a one-paragraph brief and a folder of documents (`PDF`, `MD`, `TXT`, `CSV`, `DOCX`) and autonomously builds, evaluates, diagnoses, optimizes, and documents a grounded AI agent (`agent_definition.yaml`), then reports honestly on what works, what fails, and why.
+
+**🚀 [Quick Deploy to Streamlit Cloud](STREAMLIT_DEPLOYMENT.md)** | **📖 [Full Documentation](#setup-gemini-api-ollama-is-optional)**
 
 ---
 

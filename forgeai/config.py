@@ -39,21 +39,37 @@ class Settings:
 
 
 def load_settings(env_path: Path | None = None) -> Settings:
-    """Load Settings from .env (if present) and environment variables."""
+    """Load Settings from .env (if present) and environment variables.
+    
+    Also supports Streamlit secrets for cloud deployment.
+    """
     if env_path is not None:
         load_dotenv(dotenv_path=env_path, override=False)
     else:
         load_dotenv(dotenv_path=PROJECT_ROOT / ".env", override=False)
 
-    llm_base_url = os.getenv("LLM_BASE_URL", "http://localhost:11434/v1").rstrip("/")
-    llm_model = os.getenv("LLM_MODEL", "qwen2.5:3b").strip()
-    llm_api_key = os.getenv("LLM_API_KEY", "ollama").strip()
-    embed_model = os.getenv("EMBED_MODEL", "nomic-embed-text").strip()
-    raw_judge = os.getenv("JUDGE_MODEL", "").strip()
+    # Try to load from Streamlit secrets if available (for Streamlit Cloud)
+    try:
+        import streamlit as st
+        if hasattr(st, 'secrets'):
+            # Streamlit secrets available, use them as fallback
+            def get_config(key: str, default: str = "") -> str:
+                return os.getenv(key) or st.secrets.get(key, default)
+        else:
+            get_config = lambda key, default="": os.getenv(key, default)
+    except (ImportError, FileNotFoundError):
+        # Streamlit not available or no secrets file
+        get_config = lambda key, default="": os.getenv(key, default)
+
+    llm_base_url = get_config("LLM_BASE_URL", "http://localhost:11434/v1").rstrip("/")
+    llm_model = get_config("LLM_MODEL", "qwen2.5:3b").strip()
+    llm_api_key = get_config("LLM_API_KEY", "ollama").strip()
+    embed_model = get_config("EMBED_MODEL", "nomic-embed-text").strip()
+    raw_judge = get_config("JUDGE_MODEL", "").strip()
     judge_model = raw_judge if raw_judge else llm_model
-    timeout_seconds = float(os.getenv("LLM_TIMEOUT_SECONDS", "120"))
-    max_retries = int(os.getenv("LLM_MAX_RETRIES", "3"))
-    cache_dir = Path(os.getenv("FORGEAI_CACHE_DIR", str(PROJECT_ROOT / ".forgeai_cache")))
+    timeout_seconds = float(get_config("LLM_TIMEOUT_SECONDS", "120"))
+    max_retries = int(get_config("LLM_MAX_RETRIES", "3"))
+    cache_dir = Path(get_config("FORGEAI_CACHE_DIR", str(PROJECT_ROOT / ".forgeai_cache")))
 
     return Settings(
         llm_base_url=llm_base_url,
